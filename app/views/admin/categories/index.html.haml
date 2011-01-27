@@ -1,0 +1,24 @@
+:javascript
+  $(document).ready(function() {
+    $(".edit_form").hide();
+    $("a.edit").click(function() {
+      $(this).parent().find(".edit_form").toggle();
+      return false;
+    });
+  });
+
+-if @categories.blank?
+  %h2 No categories exist
+-else
+  %h2 Manage categories
+  %ul
+    -@categories.each do |category|
+      %li.m-10
+        =link_to category, admin_category_path(category)
+        (#{link_to "Edit", "#", :class => :edit} | #{link_to "Remove", admin_category_path(category), :method => :delete, :confirm => "Are you sure?"})
+        %div.bordered.edit_form.m-10
+          =render "form", :category => category
+          .clear
+
+%h2 Add new category
+=render "form"

@@ -1,0 +1,22 @@
+%h2
+  Managing photos in
+  %em=@category
+%p
+  =link_to "&larr; Back to categories index", admin_categories_path
+  |
+  =link_to "Edit category", edit_admin_category_path(@category)
+  |
+  %strong=link_to "Upload new photo", new_admin_photo_path(:category_id => @category.id)
+
+%br/
+
+%ul.photos.inline-blocks
+  -@category.photos.each do |photo|
+    %li.bordered
+      %h4=truncate photo.name
+      %br/
+      =image_tag photo.picture(:small)
+      %br/
+      =link_to "edit", edit_admin_photo_path(photo)
+      |
+      =link_to "delete", admin_photo_path(photo), :method => :delete, :confirm => "Are you sure?"

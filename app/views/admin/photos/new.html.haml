@@ -1,0 +1,5 @@
+%h2
+  Uploading new photo
+  -if @category
+    %small (or back to #{link_to @category, admin_category_path(@category)})
+=render "form"
