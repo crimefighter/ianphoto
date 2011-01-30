@@ -1,0 +1,33 @@
+%h2 
+  Move or delete photos in category
+  %em=@category
+
+-if @destroy_category
+  %h3 Category will be destroyed then
+
+-if @other_categories.present?
+  -form_tag bulk_update_admin_photos_path, :method => :put do
+    =hidden_field_tag :category_id, @category.id
+    =label_tag :move_to_category_id, "Move to category:"
+    =collection_select :move_to, :category_id, @other_categories, :id, :name
+    =hidden_field_tag :destroy_category, true if @destroy_category
+    =submit_tag "Proceed"
+-else
+  %p
+    You don't have any other categories to move photos from this category.
+    =link_to "Create new category", new_admin_category_path
+
+%p
+  %strong OR
+
+-form_tag bulk_update_admin_photos_path, :method => :put do
+  =hidden_field_tag :category_id, @category.id
+  =hidden_field_tag :destroy_all, true
+  =label_tag "Delete all photos (forever!)"
+  =hidden_field_tag :destroy_category, true if @destroy_category
+  =submit_tag "Oh noes!", :confirm => "Are you sure?"
+
+%p
+  %strong OR
+
+%p=link_to "Just get back and browse this category", admin_category_path(@category)

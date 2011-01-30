@@ -28,6 +28,28 @@ class Admin::PhotosController < ApplicationController
       render "edit"
     end
   end
+  
+  def bulk_edit
+    @category = Category.find(params[:category_id])
+    @destroy_category = params.fetch(:to_destroy, false)
+    @other_categories = Category.all - [@category]
+  end
+
+  def bulk_update
+    @category = Category.find(params[:category_id])
+    case
+      when params[:move_to] && @destination_category_id = params[:move_to].fetch(:category_id, false)
+        @category.photos.update_all(:category_id => @destination_category_id)
+      when params.fetch(:destroy_all, false)
+        @category.photos.destroy_all
+    end
+    if params.fetch(:destroy_category, false)
+      @category.destroy
+      redirect_to admin_categories_path
+    else
+      redirect_to admin_category_path(@category)
+    end
+  end
 
   def destroy
     @photo = Photo.find(params[:id])

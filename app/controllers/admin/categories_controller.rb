@@ -38,7 +38,11 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
-    redirect_to admin_categories_path
+    if @category.photos.exists?
+      return redirect_to bulk_edit_admin_photos_path(:category_id => @category.id, :to_destroy => :true)
+    else
+      @category.destroy
+      redirect_to admin_categories_path
+    end
   end
 end

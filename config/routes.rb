@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories
 
   map.namespace :admin do |admin|
-    admin.resources :photos
+    admin.resources :photos, :collection => {:bulk_edit => :get, :bulk_update => :put}
     admin.resources :categories
   end
 end

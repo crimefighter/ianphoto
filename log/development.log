@@ -3796,3 +3796,1246 @@ Rendering template within layouts/application
 Rendering admin/categories/show
   [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
 Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 12:59:39) [GET]
+  [4;36;1mCategory Load (21.8ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (163.7ms)
+Rendered admin/categories/_form (5.8ms)
+Rendered admin/categories/_form (22.0ms)
+Completed in 551ms (View: 443, DB: 22) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 12:59:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (20.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 62ms (View: 14, DB: 20) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::PhotosController#edit (for 127.0.0.1 at 2011-01-30 13:00:57) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering admin/photos/edit
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered admin/photos/_form (126.6ms)
+Completed in 135ms (View: 128, DB: 1) | 200 OK [http://localhost/admin/photos/7/edit]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:11:46) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Category without an ID):
+  app/controllers/admin/photos_controller.rb:33:in `bulk_edit'
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (130.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:11:51) [GET]
+  Parameters: {"category"=>"1"}
+
+ActiveRecord::RecordNotFound (Couldn't find Category without an ID):
+  app/controllers/admin/photos_controller.rb:33:in `bulk_edit'
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:11:54) [GET]
+  Parameters: {"category"=>"2"}
+
+ActiveRecord::RecordNotFound (Couldn't find Category without an ID):
+  app/controllers/admin/photos_controller.rb:33:in `bulk_edit'
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (61.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:11:57) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+
+ActionView::TemplateError (undefined local variable or method `admin_bulk_update_photos_path' for #<ActionView::Base:0x1062bd2c8>) on line #5 of app/views/admin/photos/bulk_edit.html.haml:
+2:   Move or delete photos in category
+3:   %em=@category
+4: 
+5: -form_tag admin_bulk_update_photos_path, :method => :put do |f|
+6:   =f.collection_select :category_id, @other_categories, :id, :name
+
+    app/views/admin/photos/bulk_edit.html.haml:5:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:12:19) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+
+ActionView::TemplateError (undefined method `collection_select' for nil:NilClass) on line #6 of app/views/admin/photos/bulk_edit.html.haml:
+3:   %em=@category
+4: 
+5: -form_tag bulk_update_admin_photos_path, :method => :put do |f|
+6:   =f.collection_select :category_id, @other_categories, :id, :name
+
+    app/views/admin/photos/bulk_edit.html.haml:6:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:202:in `form_tag'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.24) lib/haml/helpers.rb:343:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:343:in `capture_haml'
+    haml (3.0.24) lib/haml/helpers.rb:566:in `with_haml_buffer'
+    haml (3.0.24) lib/haml/helpers.rb:339:in `capture_haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:88:in `capture'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:208:in `form_tag'
+    app/views/admin/photos/bulk_edit.html.haml:5:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (159.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:12:40) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+
+ActionView::TemplateError (wrong number of arguments (4 for 5)) on line #6 of app/views/admin/photos/bulk_edit.html.haml:
+3:   %em=@category
+4: 
+5: -form_tag bulk_update_admin_photos_path, :method => :put do
+6:   =collection_select :category_id, @other_categories, :id, :name
+
+    app/views/admin/photos/bulk_edit.html.haml:6:in `collection_select'
+    app/views/admin/photos/bulk_edit.html.haml:6:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:202:in `form_tag'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.24) lib/haml/helpers.rb:343:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:343:in `capture_haml'
+    haml (3.0.24) lib/haml/helpers.rb:566:in `with_haml_buffer'
+    haml (3.0.24) lib/haml/helpers.rb:339:in `capture_haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:88:in `capture'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:208:in `form_tag'
+    app/views/admin/photos/bulk_edit.html.haml:5:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:12:54) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:14:22) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:14:40) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1067195b0>) on line #8 of app/views/admin/photos/bulk_edit.html.haml:
+5: -form_tag bulk_update_admin_photos_path, :method => :put do
+6:   =label_tag :move_to_category_id, "Move to category:"
+7:   =collection_select :move_to, :category_id, @other_categories, :id, :name
+8:   =f.submit "Proceed"
+
+    app/views/admin/photos/bulk_edit.html.haml:8:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:202:in `form_tag'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.24) lib/haml/helpers.rb:343:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:343:in `capture_haml'
+    haml (3.0.24) lib/haml/helpers.rb:566:in `with_haml_buffer'
+    haml (3.0.24) lib/haml/helpers.rb:339:in `capture_haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:88:in `capture'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:208:in `form_tag'
+    app/views/admin/photos/bulk_edit.html.haml:5:in `_run_haml_app47views47admin47photos47bulk_edit46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:14:57) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:18:04) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+ERROR: compiling _run_haml_app47views47admin47photos47bulk_edit46html46haml RAISED compile error
+/Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:10: syntax error, unexpected '=', expecting kEND
+end;form_tag bulk_update_admin_photos_path, :method = :put do;
+                                                     ^
+/Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:15: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_haml_app47views47admin47photos47bulk_edit46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :encoding=>nil, :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :escape_html=>false, :ugly=>false, :preserve=>["textarea", "pre", "code"]});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<h2>\n  Move or delete photos in category\n  <em>#{
+
+_hamlout.adjust_tabs(2); _hamlout.format_script_false_true_false_false_false_true_false((@category
+));}</em>\n</h2>\n", -1, false);
+form_tag bulk_update_admin_photos_path, :method => :put do;
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_false_false_true_false((label_tag :move_to_category_id, "Move to category:"
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((collection_select :move_to, :category_id, @other_categories, :id, :name
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((submit_tag "Proceed"
+));}\n", 0, false);
+end;form_tag bulk_update_admin_photos_path, :method = :put do;
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_false_false_true_false((hidden_field :destroy_all, :value => true
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((label_tag "Delete all photos (forever!)"
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((submit_tag "Oh noes!"
+));}\n", 0, false);end;_erbout;ensure;@haml_buffer = @haml_buffer.upper;end;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:15:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render_without_haml'
+/Library/Ruby/Gems/1.8/gems/haml-3.0.24/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render_without_haml'
+/Library/Ruby/Gems/1.8/gems/haml-3.0.24/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1328:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/haml-3.0.24/rails/../lib/sass/plugin/rack.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:10: syntax error, unexpected '=', expecting kEND
+end;form_tag bulk_update_admin_photos_path, :method = :put do;
+                                                     ^
+/Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:15: syntax error, unexpected kENSURE, expecting $end) on line #10 of app/views/admin/photos/bulk_edit.html.haml:
+7:   =collection_select :move_to, :category_id, @other_categories, :id, :name
+8:   =submit_tag "Proceed"
+9: 
+10: -form_tag bulk_update_admin_photos_path, :method = :put do
+11:   =hidden_field :destroy_all, :value => true
+12:   =label_tag "Delete all photos (forever!)"
+13:   =submit_tag "Oh noes!"
+
+    app/views/admin/photos/bulk_edit.html.haml:15:in `compile!'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:18:14) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:18:27) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 140ms (View: 134, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:19:24) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+ERROR: compiling _run_haml_app47views47admin47photos47bulk_edit46html46haml RAISED compile error
+/Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+... category" admin_category_path(@category)
+                              ^
+Function body:           def _run_haml_app47views47admin47photos47bulk_edit46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :encoding=>nil, :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :escape_html=>false, :ugly=>false, :preserve=>["textarea", "pre", "code"]});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<h2>\n  Move or delete photos in category\n  <em>#{
+
+_hamlout.adjust_tabs(2); _hamlout.format_script_false_true_false_false_false_true_false((@category
+));}</em>\n</h2>\n", -1, false);
+form_tag bulk_update_admin_photos_path, :method => :put do;
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_false_false_true_false((label_tag :move_to_category_id, "Move to category:"
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((collection_select :move_to, :category_id, @other_categories, :id, :name
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((submit_tag "Proceed"
+));}\n", 0, false);
+end;_hamlout.push_text("<strong>OR</strong>\n", 0, false);
+
+form_tag bulk_update_admin_photos_path, :method => :put do;
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_false_false_true_false((hidden_field :destroy_all, :value => true
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((label_tag "Delete all photos (forever!)"
+));}\n#{_hamlout.format_script_false_false_false_false_false_true_false((submit_tag "Oh noes!"
+));}\n", 0, false);
+end;_hamlout.push_text("<strong>OR</strong>\n#{
+
+_hamlout.format_script_false_false_false_false_false_true_false((link_to "Just get back and browse this category" admin_category_path(@category)
+));}\n", 0, false);_erbout;ensure;@haml_buffer = @haml_buffer.upper;end;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:23:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render_without_haml'
+/Library/Ruby/Gems/1.8/gems/haml-3.0.24/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render_without_haml'
+/Library/Ruby/Gems/1.8/gems/haml-3.0.24/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1328:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/haml-3.0.24/rails/../lib/sass/plugin/rack.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/macbook/dev/ianphoto/app/views/admin/photos/bulk_edit.html.haml:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+... category" admin_category_path(@category)
+                              ^) on line #19 of app/views/admin/photos/bulk_edit.html.haml:
+16: 
+17: %strong OR
+18: 
+19: =link_to "Just get back and browse this category" admin_category_path(@category)
+
+    app/views/admin/photos/bulk_edit.html.haml:23:in `compile!'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:19:32) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:19:48) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 218ms (View: 212, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:19:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 100ms (View: 45, DB: 1) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:22:35) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:22:55) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:23:02) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"2"}
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2&to_destroy=true]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:23:13) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 113ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:24:19) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:24:26) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"2"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2&to_destroy=true]
+  [4;36;1mCategory Load (211.0ms)[0m   [0;1mSELECT * FROM "categories" LIMIT 1[0m
+  [4;35;1mPhoto Load (13.4ms)[0m   [0mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 2) LIMIT 1[0m
+  [4;36;1mCategory Load (66.0ms)[0m   [0;1mSELECT * FROM "categories" ORDER BY categories.id DESC LIMIT 1[0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 4) [0m
+  [4;36;1mPhoto Load (0.6ms)[0m   [0;1mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 4) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:32:06) [GET]
+  [4;35;1mCategory Load (0.6ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.6ms)
+Rendered admin/categories/_form (1.3ms)
+Rendered admin/categories/_form (1.0ms)
+Completed in 52ms (View: 46, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:32:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2011-01-30 13:32:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/edit
+Rendered admin/categories/_form (2.6ms)
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories/2/edit]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:32:14) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.1ms)
+Rendered admin/categories/_form (1.7ms)
+Rendered admin/categories/_form (1.0ms)
+Completed in 152ms (View: 147, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:32:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:35:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+
+ActionView::TemplateError (undefined method `bulk_edit_admin_category_path' for #<ActionView::Base:0x1065adb40>) on line #11 of app/views/admin/categories/show.html.haml:
+8:   |
+9:   =link_to "Edit category", edit_admin_category_path(@category)
+10:   |
+11:   =link_to "Move or destroy all photos", bulk_edit_admin_category_path(@category)
+12:   |
+13:   =link_to "Delete this category", admin_category_path(@category, :method => :delete)
+14: 
+
+    app/views/admin/categories/show.html.haml:11:in `_run_haml_app47views47admin47categories47show46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:35:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 132ms (View: 123, DB: 1) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:35:55) [GET]
+  Parameters: {"category_id"=>"2"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:35:58) [GET]
+  Parameters: {"method"=>"delete", "id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories/2?method=delete]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:36:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/admin/categories/2]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:36:25) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 2) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photos/bulk_edit?category_id=2&to_destroy=true
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/admin/categories/2]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:36:25) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=2&to_destroy=true]
+
+
+Processing Admin::PhotosController#bulk_update (for 127.0.0.1 at 2011-01-30 13:36:33) [PUT]
+  Parameters: {"move_to"=>{"category_id"=>"4"}, "commit"=>"Proceed", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "category_id"=>"2", "destroy_category"=>"true"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mPhoto Update (39.4ms)[0m   [0mUPDATE "photos" SET "category_id" = '4' WHERE ("photos".category_id = 2) [0m
+Redirected to http://localhost:3000/admin/categories/2?method=delete
+Completed in 49ms (DB: 40) | 302 Found [http://localhost/admin/photos/bulk_update]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:36:33) [GET]
+  Parameters: {"method"=>"delete", "id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories/2?method=delete]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:39:15) [GET]
+  Parameters: {"method"=>"delete", "id"=>"2"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 2) [0m
+Completed in 38ms (View: 29, DB: 0) | 200 OK [http://localhost/admin/categories/2?method=delete]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:39:19) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"2"}
+  [4;36;1mCategory Load (16.8ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mPhoto Load (0.6ms)[0m   [0mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 2) LIMIT 1[0m
+  [4;36;1mCategory Destroy (12.9ms)[0m   [0;1mDELETE FROM "categories" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 64ms (DB: 30) | 302 Found [http://localhost/admin/categories/2]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:39:19) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.6ms)
+Rendered admin/categories/_form (1.1ms)
+Completed in 112ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:39:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 4) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/4]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:39:27) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"4"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photos/bulk_edit?category_id=4&to_destroy=true
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/admin/categories/4]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:39:27) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"4"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 62ms (View: 56, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=4&to_destroy=true]
+  [4;36;1mCategory Load (41.7ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mPhoto Load (1.1ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 4) [0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:41:33) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:41:35) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"4"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photos/bulk_edit?category_id=4&to_destroy=true
+Completed in 109ms (DB: 0) | 302 Found [http://localhost/admin/categories/4]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:41:36) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"4"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 63ms (View: 57, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=4&to_destroy=true]
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2011-01-30 13:41:58) [GET]
+Rendering template within layouts/application
+Rendering admin/categories/new
+Rendered admin/categories/_form (3.9ms)
+Completed in 36ms (View: 30, DB: 0) | 200 OK [http://localhost/admin/categories/new]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:02) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories/]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2011-01-30 13:42:16) [POST]
+  Parameters: {"category"=>{"name"=>"Hello"}, "commit"=>"Save", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+  [4;36;1mCategory Create (15.7ms)[0m   [0;1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Hello', '2011-01-30 11:42:16', '2011-01-30 11:42:16')[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 26ms (DB: 16) | 302 Found [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:17) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.2ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:42:20) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"5"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 5) [0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 5) LIMIT 1[0m
+  [4;36;1mCategory Destroy (0.2ms)[0m   [0;1mDELETE FROM "categories" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 121ms (DB: 1) | 302 Found [http://localhost/admin/categories/5]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:20) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2011-01-30 13:42:22) [POST]
+  Parameters: {"category"=>{"name"=>"Hello"}, "commit"=>"Save", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+  [4;36;1mCategory Create (0.4ms)[0m   [0;1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Hello', '2011-01-30 11:42:22', '2011-01-30 11:42:22')[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:22) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.7ms)
+Rendered admin/categories/_form (1.3ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2011-01-30 13:42:25) [POST]
+  Parameters: {"category"=>{"name"=>"Hello"}, "commit"=>"Save", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+  [4;36;1mCategory Create (0.3ms)[0m   [0;1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Hello', '2011-01-30 11:42:25', '2011-01-30 11:42:25')[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:25) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.2ms)
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.1ms)
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:42:27) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"7"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 7) [0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 7) LIMIT 1[0m
+  [4;36;1mCategory Destroy (0.2ms)[0m   [0;1mDELETE FROM "categories" WHERE "id" = 7[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/admin/categories/7]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:27) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.8ms)
+Rendered admin/categories/_form (1.3ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:42:33) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 6) [0m
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories/6]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:36) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.6ms)
+Rendered admin/categories/_form (1.2ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:42:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 4) [0m
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/admin/categories/4]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:42:41) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"4"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photos/bulk_edit?category_id=4&to_destroy=true
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/admin/categories/4]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:42:41) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"4"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 60ms (View: 54, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=4&to_destroy=true]
+
+
+Processing Admin::PhotosController#bulk_update (for 127.0.0.1 at 2011-01-30 13:42:43) [PUT]
+  Parameters: {"move_to"=>{"category_id"=>"6"}, "commit"=>"Proceed", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "category_id"=>"4", "destroy_category"=>"true"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mPhoto Update (2.7ms)[0m   [0;1mUPDATE "photos" SET "category_id" = '6' WHERE ("photos".category_id = 4) [0m
+  [4;35;1mCategory Destroy (0.2ms)[0m   [0mDELETE FROM "categories" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 15ms (DB: 3) | 302 Found [http://localhost/admin/photos/bulk_update]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:43) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.6ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:42:45) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 6) [0m
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/6]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:42:49) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"6"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 6) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 6) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photos/bulk_edit?category_id=6&to_destroy=true
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/admin/categories/6]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:42:49) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"6"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 6) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=6&to_destroy=true]
+
+
+Processing Admin::PhotosController#bulk_update (for 127.0.0.1 at 2011-01-30 13:42:51) [PUT]
+  Parameters: {"commit"=>"Oh noes!", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "category_id"=>"6", "destroy_category"=>"true", "destroy_all"=>"true"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 6) [0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 6) [0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/4/original/_MG_1594.jpg
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/4/small/_MG_1594.jpg
+  [4;35;1mPhoto Destroy (0.4ms)[0m   [0mDELETE FROM "photos" WHERE "id" = 4[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/6/original/bubu-bububu.png
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/6/small/bubu-bububu.png
+  [4;36;1mPhoto Destroy (0.1ms)[0m   [0;1mDELETE FROM "photos" WHERE "id" = 6[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/7/original/juice.png
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/7/small/juice.png
+  [4;35;1mPhoto Destroy (0.1ms)[0m   [0mDELETE FROM "photos" WHERE "id" = 7[0m
+  [4;36;1mCategory Destroy (0.2ms)[0m   [0;1mDELETE FROM "categories" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 91ms (DB: 1) | 302 Found [http://localhost/admin/photos/bulk_update]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:51) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (3.1ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/categories]
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" [0m
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:42:59) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.3ms)
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2011-01-30 13:43:24) [POST]
+  Parameters: {"category"=>{"name"=>"Portraits"}, "commit"=>"Save", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+  [4;35;1mCategory Create (0.4ms)[0m   [0mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Portraits', '2011-01-30 11:43:24', '2011-01-30 11:43:24')[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:43:24) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:43:25) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 8) [0m
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories/8]
+
+
+Processing Admin::PhotosController#new (for 127.0.0.1 at 2011-01-30 13:43:26) [GET]
+  Parameters: {"category_id"=>"8"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (79.3ms)
+Completed in 90ms (View: 82, DB: 0) | 200 OK [http://localhost/admin/photos/new?category_id=8]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-30 13:43:39) [POST]
+  Parameters: {"photo"=>{"name"=>"photo1", "category_id"=>"8", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110130-35201-1ibmbqs-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-10yk8qq-0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-10yk8qq-0.png[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-10yk8qq-020110130-35201-12doxxj-0' 2>/dev/null
+  [4;36;1mPhoto Create (0.7ms)[0m   [0;1mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('photo1', NULL, '2011-01-30 11:43:41', '2011-01-30 11:43:41', 'image/png', '2011-01-30 11:43:39', 8, 'bubu-bububu.png', 161429, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/8/original/bubu-bububu.png
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/8/small/bubu-bububu.png
+Redirected to http://localhost:3000/admin/categories/8
+Completed in 1987ms (DB: 1) | 302 Found [http://localhost/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:43:41) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 8) [0m
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/categories/8]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:44:03) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 8) [0m
+Completed in 148ms (View: 139, DB: 0) | 200 OK [http://localhost/admin/categories/8]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2011-01-30 13:44:05) [DELETE]
+  Parameters: {"authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"8"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 8) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/photos/bulk_edit?category_id=8&to_destroy=true
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/admin/categories/8]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-30 13:44:05) [GET]
+  Parameters: {"to_destroy"=>"true", "category_id"=>"8"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=8&to_destroy=true]
+
+
+Processing Admin::PhotosController#bulk_update (for 127.0.0.1 at 2011-01-30 13:44:07) [PUT]
+  Parameters: {"commit"=>"Oh noes!", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "category_id"=>"8", "destroy_category"=>"true", "destroy_all"=>"true"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 8) [0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 8) [0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/8/original/bubu-bububu.png
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/8/small/bubu-bububu.png
+  [4;35;1mPhoto Destroy (0.4ms)[0m   [0mDELETE FROM "photos" WHERE "id" = 8[0m
+  [4;36;1mCategory Destroy (0.2ms)[0m   [0;1mDELETE FROM "categories" WHERE "id" = 8[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 72ms (DB: 1) | 302 Found [http://localhost/admin/photos/bulk_update]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:44:08) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.5ms)
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories]
