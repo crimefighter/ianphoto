@@ -1,3 +1,12 @@
+:javascript
+  $(document).ready(function() {
+    $("ul.photos").sortable({
+      stop: function(ev, ui) {
+        $("#sorting_form").ajaxSubmit();
+      }
+    });
+  });
+
 %h2
   Managing photos in
   %em=@category
@@ -14,13 +23,15 @@
 
 %br/
 
-%ul.photos.inline-blocks
-  -@category.photos.each do |photo|
-    %li.bordered
-      %h4=truncate photo.name
-      %br/
-      =image_tag photo.picture(:small)
-      %br/
-      =link_to "edit", edit_admin_photo_path(photo)
-      |
-      =link_to "delete", admin_photo_path(photo), :method => :delete, :confirm => "Are you sure?"
+-form_for [:admin, @category], :url => admin_category_path(:format => :js), :html => {:method => :put, :id => "sorting_form"} do |f|
+  %ul.photos.inline-blocks
+    -@category.photos.each do |photo|
+      %li.bordered
+        =hidden_field_tag "category[photo_ids][]", photo.id
+        %h4=truncate photo.name
+        %br/
+        =image_tag photo.picture(:small)
+        %br/
+        =link_to "edit", edit_admin_photo_path(photo)
+        |
+        =link_to "delete", admin_photo_path(photo), :method => :delete, :confirm => "Are you sure?"

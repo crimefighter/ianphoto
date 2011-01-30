@@ -79,10 +79,13 @@ h4 {
       list-style: disc; }
 
 
+ul.photos {
+  padding: 10px;
+}
+
 ul.inline-blocks {
   list-style-type: none;
   margin: 0;
-  padding: 0;
 }
 
 ul.inline-blocks li {

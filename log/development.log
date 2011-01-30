@@ -5039,3 +5039,814 @@ Rendering template within layouts/application
 Rendering admin/categories/index
 Rendered admin/categories/_form (2.5ms)
 Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:46:04) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.2ms)
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:55:16) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.7ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2011-01-30 13:55:20) [POST]
+  Parameters: {"category"=>{"name"=>"Photos"}, "commit"=>"Save", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+  [4;36;1mCategory Create (125.9ms)[0m   [0;1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Photos', '2011-01-30 11:55:20', '2011-01-30 11:55:20')[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 138ms (DB: 126) | 302 Found [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 13:55:20) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (3.0ms)
+Rendered admin/categories/_form (1.2ms)
+Completed in 19ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:55:22) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::PhotosController#new (for 127.0.0.1 at 2011-01-30 13:55:23) [GET]
+  Parameters: {"category_id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (30.8ms)
+Completed in 142ms (View: 34, DB: 0) | 200 OK [http://localhost/admin/photos/new?category_id=9]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-30 13:55:33) [POST]
+  Parameters: {"photo"=>{"name"=>"hello", "category_id"=>"9", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110130-35201-y7fkxi-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-wmm33a-0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-wmm33a-0.png[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-wmm33a-020110130-35201-9wmaoh-0' 2>/dev/null
+  [4;35;1mPhoto Create (0.5ms)[0m   [0mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('hello', NULL, '2011-01-30 11:55:33', '2011-01-30 11:55:33', 'image/png', '2011-01-30 11:55:33', 9, 'this-side-up-asshole.png', 16225, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/9/original/this-side-up-asshole.png
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/9/small/this-side-up-asshole.png
+Redirected to http://localhost:3000/admin/categories/9
+Completed in 393ms (DB: 1) | 302 Found [http://localhost/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:55:33) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::PhotosController#new (for 127.0.0.1 at 2011-01-30 13:55:35) [GET]
+  Parameters: {"category_id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (7.2ms)
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/photos/new?category_id=9]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-30 13:55:42) [POST]
+  Parameters: {"photo"=>{"name"=>"heroku", "category_id"=>"9", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110130-35201-m9pgx-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-1jmv7mc-0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-1jmv7mc-0.png[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-1jmv7mc-020110130-35201-1lnc2pt-0' 2>/dev/null
+  [4;35;1mPhoto Create (0.5ms)[0m   [0mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('heroku', NULL, '2011-01-30 11:55:42', '2011-01-30 11:55:42', 'image/png', '2011-01-30 11:55:42', 9, 'heroku-hosted-by-heroku.png', 11207, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/10/original/heroku-hosted-by-heroku.png
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/10/small/heroku-hosted-by-heroku.png
+Redirected to http://localhost:3000/admin/categories/9
+Completed in 110ms (DB: 0) | 302 Found [http://localhost/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:55:42) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 169ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::PhotosController#new (for 127.0.0.1 at 2011-01-30 13:55:44) [GET]
+  Parameters: {"category_id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (7.6ms)
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/photos/new?category_id=9]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-30 13:55:51) [POST]
+  Parameters: {"photo"=>{"name"=>"bubub", "category_id"=>"9", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110130-35201-5jy3ux-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-7zgca7-0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-7zgca7-0.png[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110130-35201-7zgca7-020110130-35201-1lppnw5-0' 2>/dev/null
+  [4;35;1mPhoto Create (0.5ms)[0m   [0mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('bubub', NULL, '2011-01-30 11:55:51', '2011-01-30 11:55:51', 'image/png', '2011-01-30 11:55:51', 9, 'bubu-bububu.png', 161429, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/11/original/bubu-bububu.png
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/11/small/bubu-bububu.png
+Redirected to http://localhost:3000/admin/categories/9
+Completed in 130ms (DB: 0) | 302 Found [http://localhost/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:55:51) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:56:41) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 13:56:53) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:03:43) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+
+ActionView::TemplateError (undefined method `merge' for 9:Fixnum) on line #26 of app/views/admin/categories/show.html.haml:
+23:   %ul.photos.inline-blocks
+24:     -@category.photos.each do |photo|
+25:       %li.bordered
+26:         =f.hidden_field "category[photo_ids][]", photo.id
+27:         %h4=truncate photo.name
+28:         %br/
+29:         =image_tag photo.picture(:small)
+
+    app/views/admin/categories/show.html.haml:26:in `_run_haml_app47views47admin47categories47show46html46haml'
+    app/views/admin/categories/show.html.haml:24:in `_run_haml_app47views47admin47categories47show46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.24) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/admin/categories/show.html.haml:22:in `_run_haml_app47views47admin47categories47show46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:03:50) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:05:09) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 141ms (View: 26, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:06:35) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing ApplicationController#update (for 127.0.0.1 at 2011-01-30 14:06:39) [PUT]
+  Parameters: {"category"=>{"category"=>{"photo_ids"=>[nil, nil, nil]}}, "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"9"}
+
+NameError (uninitialized constant CategoriesController):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (127.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:06:41) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:08:16) [GET]
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.6ms)
+Rendered admin/categories/_form (1.5ms)
+Completed in 405ms (View: 398, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:08:18) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 147ms (View: 139, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:08:24) [PUT]
+  Parameters: {"category"=>{"category"=>{"photo_ids"=>[nil, nil, nil]}}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: category):
+  app/controllers/admin/categories_controller.rb:31:in `update'
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:09:17) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.5ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:09:19) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>[nil, nil, nil]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+  [4;36;1mPhoto Update (34.6ms)[0m   [0;1mUPDATE "photos" SET category_id = NULL WHERE (category_id = 9 AND id IN (9,10,11)) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 54ms (DB: 35) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:09:19) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.6ms)
+Rendered admin/categories/_form (1.0ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:09:32) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM "photos" [0m
+  [4;36;1mPhoto Update (21.1ms)[0m   [0;1mUPDATE "photos" SET "category_id" = 9 [0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:10:00) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2011-01-30 14:11:15) [GET]
+  Parameters: {"id"=>"9"}
+
+SyntaxError (/Users/macbook/dev/ianphoto/app/controllers/admin/categories_controller.rb:51: syntax error, unexpected $end, expecting kEND):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:11:26) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 40ms (View: 32, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:11:30) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:11:30) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.6ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 120ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:11:45) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:11:47) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.6ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:11:49) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "10", "11"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,10,11)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:11:49) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.7ms)
+Rendered admin/categories/_form (2.2ms)
+Completed in 113ms (View: 108, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:11:50) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "10", "11"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,10,11)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:11:50) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.9ms)
+Rendered admin/categories/_form (1.1ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:11:51) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:11:51) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.3ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:11:54) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["11", "10", "9"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (11,10,9)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:11:54) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.5ms)
+Rendered admin/categories/_form (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#update (for 127.0.0.1 at 2011-01-30 14:11:56) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["11", "9", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (11,9,10)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-30 14:11:56) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.0ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:12:07) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:14:51) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 27ms (View: 18, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:14:54) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+
+ActionView::MissingTemplate (Missing template admin/categories/update.erb in view path app/views):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:16:25) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 38ms (View: 28, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:16:27) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 60ms (View: 46, DB: 1) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:16:30) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:16:48) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:16:50) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 15ms (View: 1, DB: 1) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:16:51) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 23ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:16:53) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["11", "9", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" IN (11,9,10)) [0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:16:54) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+  [4;35;1mCategory Load (41.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;36;1mPhoto Load (43.4ms)[0m   [0;1mSELECT "photos".id FROM "photos" WHERE ("photos".category_id = 9) [0m
+  [4;35;1mPhoto Load (49.1ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (10,9,11)) [0m
+  [4;36;1mPhoto Load (22.9ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+
+
+Processing ApplicationController#update (for 127.0.0.1 at 2011-01-30 14:25:03) [PUT]
+  Parameters: {"category"=>{"category"=>{"photo_ids"=>[nil, nil, nil]}}, "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"9"}
+
+NameError (uninitialized constant CategoriesController):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mPhoto Load (17.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (10,9)) [0m
+  [4;36;1mPhoto Update (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: conditions.id: UPDATE "photos" SET "position" = 1 WHERE ("conditions"."id" = 9) [0m
+  [4;35;1mPhoto Update (18.4ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = 9) [0m
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:33:59) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (39.7ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (1.8ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 256ms (View: 110, DB: 41) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:34:02) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+
+NoMethodError (undefined method `decrement!' for 1:Fixnum):
+  app/models/photo.rb:12:in `set_order_on!'
+  app/controllers/admin/categories_controller.rb:33:in `update'
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:35:03) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mCategory Load (38.7ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 81ms (View: 30, DB: 40) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:35:06) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+
+NoMethodError (undefined method `prev' for 1:Fixnum):
+  app/models/photo.rb:12:in `set_order_on!'
+  app/controllers/admin/categories_controller.rb:33:in `update'
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:35:36) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 35ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:35:37) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.5ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+  [4;35;1mPhoto Update (27.3ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '9') [0m
+  [4;36;1mPhoto Update (2.8ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '11') [0m
+  [4;35;1mPhoto Update (2.8ms)[0m   [0mUPDATE "photos" SET "position" = 3 WHERE ("photos"."id" = '10') [0m
+Completed in 222ms (View: 22, DB: 34) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:35:39) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) [0m
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:36:11) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.5ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:36:15) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (2.0ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '9') [0m
+  [4;36;1mPhoto Update (2.6ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '11') [0m
+  [4;35;1mPhoto Update (2.1ms)[0m   [0mUPDATE "photos" SET "position" = 3 WHERE ("photos"."id" = '10') [0m
+Completed in 22ms (View: 1, DB: 7) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:36:18) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["9", "11", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (9,11,10)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (2.8ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '9') [0m
+  [4;36;1mPhoto Update (2.1ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '11') [0m
+  [4;35;1mPhoto Update (2.2ms)[0m   [0mUPDATE "photos" SET "position" = 3 WHERE ("photos"."id" = '10') [0m
+Completed in 23ms (View: 1, DB: 8) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:36:20) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["11", "9", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (11,9,10)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (16.5ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '11') [0m
+  [4;36;1mPhoto Update (1.9ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '9') [0m
+  [4;35;1mPhoto Update (2.1ms)[0m   [0mUPDATE "photos" SET "position" = 3 WHERE ("photos"."id" = '10') [0m
+Completed in 37ms (View: 1, DB: 21) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:36:22) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["11", "10", "9"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (11,10,9)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (2.5ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '11') [0m
+  [4;36;1mPhoto Update (2.0ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '10') [0m
+  [4;35;1mPhoto Update (1.8ms)[0m   [0mUPDATE "photos" SET "position" = 3 WHERE ("photos"."id" = '9') [0m
+Completed in 130ms (View: 1, DB: 7) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:36:23) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-30 14:36:28) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["11", "9", "10"]}, "authenticity_token"=>"gSiPxVX8s7SJVqT+0WLGTZTVGuVOQEkbkAUl4gBciUA=", "id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (11,9,10)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (2.6ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '11') [0m
+  [4;36;1mPhoto Update (2.3ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '9') [0m
+  [4;35;1mPhoto Update (2.2ms)[0m   [0mUPDATE "photos" SET "position" = 3 WHERE ("photos"."id" = '10') [0m
+Completed in 25ms (View: 2, DB: 8) | 200 OK [http://localhost/admin/categories/9.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-30 14:36:30) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.5ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]

@@ -1,0 +1,4 @@
+public/system/
+db/*.sqlite3
+log/
+tmp/

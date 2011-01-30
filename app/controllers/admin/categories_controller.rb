@@ -29,10 +29,17 @@ class Admin::CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     @category.update_attributes(params[:category])
-    if @category.save
-      redirect_to admin_categories_path
-    else
-      render :edit
+    if @photo_ids = params[:category].fetch(:photo_ids, false)
+      Photo.set_order_on!(@photo_ids)
+    end
+    respond_to do |format|
+      if @category.save
+        format.html { redirect_to admin_categories_path }
+        format.js { head :ok }
+      else
+        format.html { render :edit }
+        format.js { render :nothing }
+      end
     end
   end
 
