@@ -94,7 +94,8 @@ ul.inline-blocks li {
 }
 
 .fullBg {
-  position: relative;
+  position: fixed;
+  overflow: hidden;
 }
  
 #maincontent {

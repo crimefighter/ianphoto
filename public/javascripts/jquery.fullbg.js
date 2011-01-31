@@ -26,7 +26,8 @@
         width: (ratio.height * img.width),
         height: (ratio.width * img.height)
       }
-      if(diff.height > win.height) {
+      var img_ratio = img.width / img.height;
+      if((diff.height > win.height) || img_ratio > 1) {
         bgImg.css({
           width: win.width + 'px',
           height: '',
