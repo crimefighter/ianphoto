@@ -5850,3 +5850,256 @@ Rendering template within layouts/application
 Rendering admin/categories/show
   [4;35;1mPhoto Load (0.5ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
 Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-31 11:26:37) [GET]
+  [4;36;1mCategory Load (0.5ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (14.9ms)
+Rendered admin/categories/_form (2.4ms)
+Completed in 157ms (View: 104, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:26:39) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 122ms (View: 93, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-31 11:26:46) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.0ms)
+Rendered admin/categories/_form (2.8ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2011-01-31 11:26:50) [POST]
+  Parameters: {"category"=>{"name"=>"Wedding"}, "commit"=>"Save", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+  [4;36;1mCategory Create (0.5ms)[0m   [0;1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Wedding', '2011-01-31 09:26:50', '2011-01-31 09:26:50')[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-31 11:26:50) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.7ms)
+Rendered admin/categories/_form (1.4ms)
+Rendered admin/categories/_form (1.1ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:26:51) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/categories/10]
+
+
+Processing Admin::PhotosController#new (for 127.0.0.1 at 2011-01-31 11:26:52) [GET]
+  Parameters: {"category_id"=>"10"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (24.3ms)
+Completed in 64ms (View: 55, DB: 0) | 200 OK [http://localhost/admin/photos/new?category_id=10]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-31 11:27:05) [POST]
+  Parameters: {"photo"=>{"name"=>"fssd", "category_id"=>"10", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110131-6198-dk2uwe-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-1nfhm6e-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-1nfhm6e-0.jpg[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-1nfhm6e-020110131-6198-u5jh27-0' 2>/dev/null
+  [4;35;1mPhoto Create (1.0ms)[0m   [0mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('fssd', NULL, '2011-01-31 09:27:06', '2011-01-31 09:27:06', 'image/jpeg', '2011-01-31 09:27:05', 10, 'Boston City Flow.jpg', 339773, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/12/small/Boston City Flow.jpg
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/12/original/Boston City Flow.jpg
+Redirected to http://localhost:3000/admin/categories/10
+Completed in 1662ms (DB: 1) | 302 Found [http://localhost/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:27:06) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/10]
+
+
+Processing Admin::PhotosController#new (for 127.0.0.1 at 2011-01-31 11:27:08) [GET]
+  Parameters: {"category_id"=>"10"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (6.2ms)
+Completed in 146ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/photos/new?category_id=10]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-31 11:27:22) [POST]
+  Parameters: {"photo"=>{"name"=>"", "category_id"=>"10", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110131-6198-2pljd8-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-12rmgps-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-12rmgps-0.jpg[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-12rmgps-020110131-6198-1gua0o2-0' 2>/dev/null
+Rendering template within layouts/application
+Rendering admin/photos/new
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered admin/photos/_form (22.9ms)
+Completed in 258ms (View: 28, DB: 0) | 200 OK [http://localhost/admin/photos]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-31 11:27:29) [POST]
+  Parameters: {"photo"=>{"name"=>"safaf", "category_id"=>"10", "description"=>""}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+Rendering template within layouts/application
+Rendering admin/photos/new
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered admin/photos/_form (143.4ms)
+Completed in 156ms (View: 145, DB: 0) | 200 OK [http://localhost/admin/photos]
+
+
+Processing Admin::PhotosController#create (for 127.0.0.1 at 2011-01-31 11:27:43) [POST]
+  Parameters: {"photo"=>{"name"=>"safaf", "category_id"=>"10", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110131-6198-495opb-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20="}
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-qhynxf-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-qhynxf-0.jpg[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-qhynxf-020110131-6198-i3ymrf-0' 2>/dev/null
+  [4;35;1mPhoto Create (4.5ms)[0m   [0mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('safaf', NULL, '2011-01-31 09:27:43', '2011-01-31 09:27:43', 'image/jpeg', '2011-01-31 09:27:43', 10, 'Boston City Flow.jpg', 339773, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/13/small/Boston City Flow.jpg
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/13/original/Boston City Flow.jpg
+Redirected to http://localhost:3000/admin/categories/10
+Completed in 317ms (DB: 5) | 302 Found [http://localhost/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:27:43) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.6ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 58ms (View: 44, DB: 1) | 200 OK [http://localhost/admin/categories/10]
+
+
+Processing Admin::PhotosController#edit (for 127.0.0.1 at 2011-01-31 11:27:46) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 13) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering admin/photos/edit
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered admin/photos/_form (13.4ms)
+Completed in 59ms (View: 53, DB: 0) | 200 OK [http://localhost/admin/photos/13/edit]
+
+
+Processing Admin::PhotosController#update (for 127.0.0.1 at 2011-01-31 11:27:50) [PUT]
+  Parameters: {"photo"=>{"name"=>"safaf", "category_id"=>"10", "description"=>"", "picture"=>#<File:/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/RackMultipart20110131-6198-1wtbfey-0>}, "commit"=>"Save changes", "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"13"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 13) ORDER BY photos.position ASC[0m
+[paperclip] identify -format %wx%h '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-159jtsm-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-159jtsm-0.jpg[0]' -resize "200x200>" '/var/folders/Yn/YnlmMtpHGPyJ-7xkqt3v9E+++TI/-Tmp-/stream20110131-6198-159jtsm-020110131-6198-18b8gno-0' 2>/dev/null
+  [4;35;1mPhoto Update (0.5ms)[0m   [0mUPDATE "photos" SET "updated_at" = '2011-01-31 09:27:51', "picture_file_size" = 354633, "picture_file_name" = 'Costa Rican Frog.jpg', "picture_updated_at" = '2011-01-31 09:27:51' WHERE "id" = 13[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/13/original/Boston City Flow.jpg
+[paperclip] deleting /Users/macbook/dev/ianphoto/public/system/pictures/13/small/Boston City Flow.jpg
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/13/small/Costa Rican Frog.jpg
+[paperclip] saving /Users/macbook/dev/ianphoto/public/system/pictures/13/original/Costa Rican Frog.jpg
+Redirected to http://localhost:3000/admin/categories/10
+Completed in 270ms (DB: 1) | 302 Found [http://localhost/admin/photos/13]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:27:51) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/10]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-31 11:27:53) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["13", "12"]}, "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (13,12)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (2.7ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '13') [0m
+  [4;36;1mPhoto Update (2.5ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '12') [0m
+Completed in 20ms (View: 1, DB: 6) | 200 OK [http://localhost/admin/categories/10.js]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-31 11:27:57) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["12", "13"]}, "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"10"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" IN (12,13)) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Update (3.2ms)[0m   [0;1mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '12') [0m
+  [4;35;1mPhoto Update (2.6ms)[0m   [0mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '13') [0m
+Completed in 23ms (View: 1, DB: 6) | 200 OK [http://localhost/admin/categories/10.js]
+
+
+Processing Admin::CategoriesController#update to js (for 127.0.0.1 at 2011-01-31 11:27:58) [PUT]
+  Parameters: {"category"=>{"photo_ids"=>["13", "12"]}, "authenticity_token"=>"4x5a4bIo2gaUzL0cP4753ehpFc5Bna0krVO4CgHwa20=", "id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" IN (13,12)) ORDER BY photos.position ASC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+  [4;35;1mPhoto Update (2.5ms)[0m   [0mUPDATE "photos" SET "position" = 1 WHERE ("photos"."id" = '13') [0m
+  [4;36;1mPhoto Update (2.1ms)[0m   [0;1mUPDATE "photos" SET "position" = 2 WHERE ("photos"."id" = '12') [0m
+Completed in 21ms (View: 1, DB: 5) | 200 OK [http://localhost/admin/categories/10.js]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:27:59) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/categories/10]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-31 11:28:05) [GET]
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.8ms)
+Rendered admin/categories/_form (1.2ms)
+Rendered admin/categories/_form (1.1ms)
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:28:06) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#show (for 127.0.0.1 at 2011-01-31 11:28:07) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 123ms (View: 114, DB: 0) | 200 OK [http://localhost/admin/categories/10]
+
+
+Processing Admin::PhotosController#bulk_edit (for 127.0.0.1 at 2011-01-31 11:28:35) [GET]
+  Parameters: {"category_id"=>"10"}
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/photos/bulk_edit
+Completed in 58ms (View: 52, DB: 0) | 200 OK [http://localhost/admin/photos/bulk_edit?category_id=10]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2011-01-31 11:28:41) [GET]
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.8ms)
+Rendered admin/categories/_form (1.3ms)
+Rendered admin/categories/_form (0.9ms)
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/admin/categories]
