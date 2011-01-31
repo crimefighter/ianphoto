@@ -5850,3 +5850,373 @@ Rendering template within layouts/application
 Rendering admin/categories/show
   [4;35;1mPhoto Load (0.5ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
 Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/admin/categories/9]
+
+
+Processing Admin::CategoriesController#index (for 192.168.30.59 at 2011-01-31 20:00:13) [GET]
+  [4;36;1mCategory Load (0.5ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (2.6ms)
+Rendered admin/categories/_form (1.8ms)
+Completed in 35ms (View: 25, DB: 0) | 200 OK [http://god/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 192.168.30.59 at 2011-01-31 20:00:14) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://god/admin/categories/9]
+
+
+Processing ApplicationController#index (for 192.168.30.59 at 2011-01-31 20:00:15) [GET]
+  Parameters: {"1296388551"=>nil}
+
+ActionController::RoutingError (No route matches "/system/pictures/11/small/bubu-bububu.png" with {:method=>:get}):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.30.59 at 2011-01-31 20:00:15) [GET]
+  Parameters: {"1296388542"=>nil}
+
+ActionController::RoutingError (No route matches "/system/pictures/10/small/heroku-hosted-by-heroku.png" with {:method=>:get}):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.30.59 at 2011-01-31 20:00:15) [GET]
+  Parameters: {"1296388533"=>nil}
+
+ActionController::RoutingError (No route matches "/system/pictures/9/small/this-side-up-asshole.png" with {:method=>:get}):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::CategoriesController#index (for 192.168.30.59 at 2011-01-31 20:00:18) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.4ms)
+Rendered admin/categories/_form (0.8ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://god/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 192.168.30.59 at 2011-01-31 20:00:19) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 9) ORDER BY photos.position ASC[0m
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://god/admin/categories/9]
+
+
+Processing ApplicationController#index (for 192.168.30.59 at 2011-01-31 20:00:20) [GET]
+  Parameters: {"1296388551"=>nil}
+
+ActionController::RoutingError (No route matches "/system/pictures/11/small/bubu-bububu.png" with {:method=>:get}):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.30.59 at 2011-01-31 20:00:20) [GET]
+  Parameters: {"1296388533"=>nil}
+
+ActionController::RoutingError (No route matches "/system/pictures/9/small/this-side-up-asshole.png" with {:method=>:get}):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.30.59 at 2011-01-31 20:00:20) [GET]
+  Parameters: {"1296388542"=>nil}
+
+ActionController::RoutingError (No route matches "/system/pictures/10/small/heroku-hosted-by-heroku.png" with {:method=>:get}):
+  haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::PhotosController#new (for 192.168.30.59 at 2011-01-31 20:00:21) [GET]
+  Parameters: {"category_id"=>"9"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (9.4ms)
+Completed in 30ms (View: 19, DB: 0) | 200 OK [http://god/admin/photos/new?category_id=9]
+
+
+Processing Admin::CategoriesController#index (for 192.168.30.59 at 2011-01-31 20:00:24) [GET]
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.3ms)
+Rendered admin/categories/_form (0.8ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://god/admin/categories]
+
+
+Processing Admin::CategoriesController#create (for 192.168.30.59 at 2011-01-31 20:00:27) [POST]
+  Parameters: {"category"=>{"name"=>"Photos2"}, "commit"=>"Save", "authenticity_token"=>"yByTxiFOZ3ikBtV0aLvqcOZqeoUKhvCRO/YtLGPFlVk="}
+  [4;36;1mCategory Create (0.3ms)[0m   [0;1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES('Photos2', '2011-01-31 18:00:27', '2011-01-31 18:00:27')[0m
+Redirected to http://god:3001/admin/categories
+Completed in 74ms (DB: 0) | 302 Found [http://god/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 192.168.30.59 at 2011-01-31 20:00:28) [GET]
+  [4;35;1mCategory Load (0.5ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering admin/categories/index
+Rendered admin/categories/_form (1.3ms)
+Rendered admin/categories/_form (1.0ms)
+Rendered admin/categories/_form (0.7ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://god/admin/categories]
+
+
+Processing Admin::CategoriesController#show (for 192.168.30.59 at 2011-01-31 20:00:32) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://god/admin/categories/10]
+
+
+Processing Admin::PhotosController#new (for 192.168.30.59 at 2011-01-31 20:00:33) [GET]
+  Parameters: {"category_id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/photos/new
+Rendered admin/photos/_form (5.4ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://god/admin/photos/new?category_id=10]
+
+
+Processing Admin::PhotosController#create (for 192.168.30.59 at 2011-01-31 20:01:29) [POST]
+  Parameters: {"photo"=>{"name"=>"Category", "category_id"=>"10", "description"=>"", "picture"=>#<File:/tmp/RackMultipart20110131-14921-mah97u-0>}, "commit"=>"Save changes", "authenticity_token"=>"yByTxiFOZ3ikBtV0aLvqcOZqeoUKhvCRO/YtLGPFlVk="}
+[paperclip] identify -format %wx%h '/tmp/stream20110131-14921-1d1v6ix-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20110131-14921-1d1v6ix-0.jpg[0]' -resize "200x200>" '/tmp/stream20110131-14921-1d1v6ix-020110131-14921-qpmiqu-0' 2>/dev/null
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("name", "position", "created_at", "updated_at", "picture_content_type", "picture_updated_at", "category_id", "picture_file_name", "picture_file_size", "description") VALUES('Category', NULL, '2011-01-31 18:01:30', '2011-01-31 18:01:30', 'image/jpeg', '2011-01-31 18:01:29', 10, '8819-1920x1200.jpg', 679168, '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/mike/dev/ianphoto/public/system/pictures/12/small/8819-1920x1200.jpg
+[paperclip] saving /home/mike/dev/ianphoto/public/system/pictures/12/original/8819-1920x1200.jpg
+Redirected to http://god:3001/admin/categories/10
+Completed in 568ms (DB: 0) | 302 Found [http://god/admin/photos]
+
+
+Processing Admin::CategoriesController#show (for 192.168.30.59 at 2011-01-31 20:01:30) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering admin/categories/show
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".category_id = 10) ORDER BY photos.position ASC[0m
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://god/admin/categories/10]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:01:38) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+
+ActionView::TemplateError (undefined local variable or method `photo' for #<ActionView::Base:0xb66d40c8>) on line #2 of app/views/photos/show.html.haml:
+1: %div{:position => "absolute"}
+2:   =image_tag photo.picture[:original]
+
+    app/views/photos/show.html.haml:2:in `_run_haml_app47views47photos47show46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (88.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:01:48) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+
+ActionView::TemplateError (undefined method `[]' for #<Paperclip::Attachment:0xb67e9b70>) on line #2 of app/views/photos/show.html.haml:
+1: %div{:position => "absolute"}
+2:   =image_tag @photo.picture[:original]
+
+    app/views/photos/show.html.haml:2:in `_run_haml_app47views47photos47show46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:01:57) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+
+ActionView::TemplateError (can't convert Paperclip::Attachment into String) on line #2 of app/views/photos/show.html.haml:
+1: %div{:position => "absolute"}
+2:   =image_tag @photo.picture
+
+    app/views/photos/show.html.haml:2:in `_run_haml_app47views47photos47show46html46haml'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.24) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (98.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:02:18) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://god/photos/12]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:30:07) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://god/photos/12]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:33:17) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://god/photos/12]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:34:35) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://god/photos/12]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:34:45) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://god/photos/12]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:35:48) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://god/photos/12]
+
+
+Processing PhotosController#show (for 192.168.30.59 at 2011-01-31 20:36:00) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 12) ORDER BY photos.position ASC[0m
+Rendering template within layouts/application
+Rendering photos/show
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://god/photos/12]

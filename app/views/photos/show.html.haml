@@ -1,0 +1,8 @@
+=javascript_include_tag "jquery.fullbg"
+:javascript
+  $(document).ready(function() {
+    $("#bg").fullBg();
+  });
+
+%div{:position => "absolute"}
+  =image_tag @photo.picture(:original), :id => "bg"
