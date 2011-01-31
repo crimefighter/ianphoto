@@ -10,27 +10,35 @@
     var bgImg = $(this);		
  
     function resizeImg() {
-      var imgwidth = bgImg.width();
-      var imgheight = bgImg.height();
- 
-      var winwidth = $(window).width();
-      var winheight = $(window).height();
- 
-      var widthratio = winwidth / imgwidth;
-      var heightratio = winheight / imgheight;
- 
-      var widthdiff = heightratio * imgwidth;
-      var heightdiff = widthratio * imgheight;
- 
-      if(heightdiff>winheight) {
+      var img = {
+        width: bgImg.width(),
+        height: bgImg.height()
+      }
+      var win = {
+        width: $(window).width(),
+        height: $(window).height()
+      }
+      var ratio = {
+        width: (win.width / img.width),
+        height: (win.height / img.height)
+      }
+      var diff = {
+        width: (ratio.height * img.width),
+        height: (ratio.width * img.height)
+      }
+      if(diff.height > win.height) {
         bgImg.css({
-          width: winwidth+'px',
-          height: heightdiff+'px'
+          width: win.width + 'px',
+          height: '',
+          left: -(img.width-win.width)/2+'px',
+          top: -(img.height-win.height)/2+'px'
         });
       } else {
         bgImg.css({
-          width: widthdiff+'px',
-          height: winheight+'px'
+          height: win.height + 'px',
+          width: '',
+          left: -(img.width-win.width)/2+'px',
+          top: -(img.height-win.height)/2+'px'
         });		
       }
     } 
