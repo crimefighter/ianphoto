@@ -8,6 +8,11 @@
 (function($) {
   $.fn.fullBg = function(){
     var bgImg = $(this);		
+    var original_img = {
+      width: bgImg.width(),
+      height: bgImg.height()
+    }
+    var img_ratio = original_img.width / original_img.height;
  
     function resizeImg() {
       var img = {
@@ -26,8 +31,7 @@
         width: (ratio.height * img.width),
         height: (ratio.width * img.height)
       }
-      var img_ratio = img.width / img.height;
-      if((diff.height > win.height) || img_ratio > 1) {
+      if((diff.height > win.height) && img_ratio > 1) {
         bgImg.css({
           width: win.width + 'px',
           height: '',
