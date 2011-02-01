@@ -32,6 +32,8 @@
         %br/
         =image_tag photo.picture(:small)
         %br/
+        =link_to "show", photo_path(photo)
+        |
         =link_to "edit", edit_admin_photo_path(photo)
         |
         =link_to "delete", admin_photo_path(photo), :method => :delete, :confirm => "Are you sure?"
