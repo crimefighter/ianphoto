@@ -93,15 +93,12 @@ ul.inline-blocks li {
   margin: 5px;
 }
 
-.fullBg {
+img.fullBg {
   position: fixed;
   overflow: hidden;
-}
- 
-#maincontent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 50;
+  opacity: 1;
 }
 
+img.preloaded {
+  opacity: 0;
+}

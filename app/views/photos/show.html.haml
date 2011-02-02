@@ -1,9 +1,19 @@
 =javascript_include_tag "jquery.fullbg"
 :javascript
   $(document).ready(function() {
-    $("#bg").load(function() {
+    $("#current").load(function() {
       $(this).fullBg();
+    });
+
+    $("#current").click(function() {
+      alert("hh");
+      $(this).animate({
+        opacity: 0
+      }, 300);
+      return false;
     });
   });
 
-=image_tag @photo.picture(:original), :id => "bg", :class => "fullBg"
+=image_tag @photo.picture(:original), :id => "current", :class => "fullBg"
+-(Photo.all - [@photo]).each do |photo|
+  =image_tag photo.picture(:original), :class => "preloaded"
