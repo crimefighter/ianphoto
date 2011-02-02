@@ -13,21 +13,22 @@
       height: bgImg.height()
     }
     var img_ratio = original_img.width / original_img.height;
+    var img,win,ratio,diff;
  
     function resizeImg() {
-      var img = {
+      img = {
         width: bgImg.width(),
         height: bgImg.height()
       }
-      var win = {
+      win = {
         width: $(window).width(),
         height: $(window).height()
       }
-      var ratio = {
+      ratio = {
         width: (win.width / img.width),
         height: (win.height / img.height)
       }
-      var diff = {
+      diff = {
         width: (ratio.height * img.width),
         height: (ratio.width * img.height)
       }
