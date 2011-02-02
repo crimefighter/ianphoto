@@ -1,7 +1,9 @@
 =javascript_include_tag "jquery.fullbg"
 :javascript
   $(document).ready(function() {
-    $("#bg").fullBg();
+    $("#bg").load(function() {
+      $(this).fullBg();
+    });
   });
 
 =image_tag @photo.picture(:original), :id => "bg", :class => "fullBg"

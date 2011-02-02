@@ -47,9 +47,10 @@
         });		
       }
     } 
-    resizeImg();
     $(window).resize(function() {
       resizeImg();
     }); 
+    resizeImg();
+    $(window).resize();
   };
 })(jQuery)
