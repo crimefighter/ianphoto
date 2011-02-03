@@ -3,17 +3,17 @@
   $(document).ready(function() {
     $("#current").load(function() {
       $(this).fullBg();
+      $(this).next("img").fullBg({animated: false});
     });
 
     $("#current").click(function() {
-      alert("hh");
-      $(this).animate({
-        opacity: 0
-      }, 300);
+      $(this).fadeOut(function() {
+        $(this).next("img").fullBg();
+      });
       return false;
     });
   });
 
-=image_tag @photo.picture(:original), :id => "current", :class => "fullBg"
--(Photo.all - [@photo]).each do |photo|
-  =image_tag photo.picture(:original), :class => "preloaded"
+=image_tag @photo.picture(:original), :id => "current", :class => "fullBg", :style => "z-index: #{Photo.count}"
+-(Photo.all - [@photo]).each_with_index do |photo, index|
+  =image_tag photo.picture(:original), :class => "fullBg", :style => "z-index: #{Photo.count-(index+1)}"

@@ -96,9 +96,4 @@ ul.inline-blocks li {
 img.fullBg {
   position: fixed;
   overflow: hidden;
-  opacity: 1;
-}
-
-img.preloaded {
-  opacity: 0;
 }
