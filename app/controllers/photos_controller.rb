@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
         @json_data = {}
         {:current_photo => @photo, :next_photo => @next_photo, :previous_photo => @previous_photo}.each do |key, photo|
           @json_data.merge!(
-            key => (Hash[*([:original, :thumbnail].map {|k| ["#{k}_picture".to_sym, photo.picture(k)]}).flatten]).merge(
+            key => (Hash[*([:original, :small].map {|k| ["#{k}_picture".to_sym, photo.picture(k)]}).flatten]).merge(
               :path => photo_path(photo, :format => :json)
             )
           )

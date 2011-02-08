@@ -26,7 +26,9 @@ $(document).ready(function() {
           $previous_photo.addClass("next changed").removeClass("previous");
           $current_photo.addClass("previous changed").removeClass("current").show();
           $this.attr("href", data.next_photo.path);
+          $this.find("img:first").attr("src", data.next_photo.small_picture);
           $("#prev_link").attr("href", data.previous_photo.path);
+          $("#prev_link").find("img:first").attr("src", data.previous_photo.small_picture);
           $(".changed").removeClass("changed");
         }
       });
@@ -54,7 +56,9 @@ $(document).ready(function() {
           $next_photo.addClass("current changed").removeClass("next");
           $current_photo.addClass("next changed").removeClass("current").show();
           $this.attr("href", data.previous_photo.path);
+          $this.find("img:first").attr("src", data.previous_photo.small_picture);
           $("#next_link").attr("href", data.next_photo.path);
+          $("#next_link").find("img:first").attr("src", data.next_photo.small_picture);
           $(".changed").removeClass("changed");
         }
       });
