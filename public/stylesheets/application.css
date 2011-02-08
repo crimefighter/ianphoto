@@ -97,3 +97,55 @@ img.fullBg {
   position: fixed;
   overflow: hidden;
 }
+
+.next_link, .prev_link, .loading_box {
+  position: absolute;
+  margin: 0;
+  padding: 10px;
+  background: #000;
+  z-index: 10;
+}
+
+.loading_box {
+  left: 50%;
+  width: 150px;
+  margin-left: -75px;
+  top: 0;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+.next_link a, .prev_link a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.prev_link {
+  left: 0;
+  top: 100px;
+}
+
+.next_link {
+  right: 0;
+  top: 100px;
+}
+
+img {
+  background: #000;
+}
+
+img.current {
+  z-index: 6;
+}
+
+img.next {
+  z-index: 4;
+}
+
+img.previous {
+  z-index: 2;
+}

@@ -7,6 +7,9 @@ class Photo < ActiveRecord::Base
   validates_attachment_presence :picture
   validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png', 'image/gif']
 
+  named_scope :previous, lambda { |p| {:order => "photos.position DESC", :conditions => ["photos.position < ? AND photos.category_id = ?", p.position, p.category_id], :limit => 1} }
+  named_scope :next, lambda { |p| {:order => "photos.position ASC", :conditions => ["photos.position > ? AND photos.category_id = ?", p.position, p.category_id], :limit => 1} }
+
   default_scope :order => "photos.position ASC"
 
   def self.set_order_on!(photo_ids, options = nil)
@@ -15,5 +18,19 @@ class Photo < ActiveRecord::Base
     photo_ids.each do |photo_id|
       Photo.update_all({:position => (starting_with = starting_with.next)}, {:id => photo_id})
     end
+  end
+
+  def next(options = nil)
+    options ||= {}
+    next_photo = Photo.next(self).try(:first)
+    next_photo ||= self.category.photos.first if options.fetch(:cycle, false)
+    next_photo
+  end
+
+  def previous(options = nil)
+    options ||= {}
+    next_photo = Photo.previous(self).try(:first)
+    next_photo ||= self.category.photos.last if options.fetch(:cycle, false)
+    next_photo
   end
 end

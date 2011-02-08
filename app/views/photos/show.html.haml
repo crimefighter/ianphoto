@@ -1,19 +1,12 @@
 =javascript_include_tag "jquery.fullbg"
-:javascript
-  $(document).ready(function() {
-    $("#current").load(function() {
-      $(this).fullBg();
-      $(this).next("img").fullBg({animated: false});
-    });
+=javascript_include_tag "photo_page"
 
-    $("#current").click(function() {
-      $(this).fadeOut(function() {
-        $(this).next("img").fullBg();
-      });
-      return false;
-    });
-  });
+=image_tag @photo.picture(:original), :class => "fullBg current"
+=image_tag @next_photo.picture(:original), :class => "fullBg next"
+=image_tag @previous_photo.picture(:original), :class => "fullBg previous"
 
-=image_tag @photo.picture(:original), :id => "current", :class => "fullBg", :style => "z-index: #{Photo.count}"
--(Photo.all - [@photo]).each_with_index do |photo, index|
-  =image_tag photo.picture(:original), :class => "fullBg", :style => "z-index: #{Photo.count-(index+1)}"
+.next_link
+  =link_to "&rarr;", photo_path(@next_photo, :format => :json), :id => "next_link", :class => "paginate"
+.prev_link
+  =link_to "&larr;", photo_path(@previous_photo, :format => :json), :id => "prev_link", :class => "paginate"
+
