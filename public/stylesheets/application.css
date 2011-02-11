@@ -3,6 +3,10 @@ body {
   font-family: "Lucida Grande", Helvetica, Arial;
   font-size: 14px; }
 
+body.with_photos {
+  background-color: #000;
+}
+
 a {
   color: #0000FF; }
   a img {
@@ -102,7 +106,7 @@ img.fullBg {
   position: absolute;
   margin: 0;
   padding: 10px;
-  background: #000;
+  background: rgba(0,0,0,0.7);
   z-index: 10;
 }
 
@@ -126,12 +130,16 @@ img.fullBg {
 
 .prev_link {
   left: 0;
-  top: 100px;
+  top: 40%;
+  height: 30px;
+  margin-top: -25px;
 }
 
 .next_link {
   right: 0;
-  top: 100px;
+  top: 40%;
+  height: 30px;
+  margin-top: -25px;
 }
 
 img {
@@ -148,4 +156,26 @@ img.next {
 
 img.previous {
   z-index: 2;
+}
+
+#next_thumbnail {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  -webkit-box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+}
+
+#prev_thumbnail {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  -webkit-box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
 }

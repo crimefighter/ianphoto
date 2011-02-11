@@ -8,12 +8,34 @@ $(document).ready(function() {
     stopLoading();
   });
 
+  var $next_thumbnail = $("#next_thumbnail");
+  var $prev_thumbnail = $("#prev_thumbnail");
+  var $next_link = $("#next_link");
+  var $prev_link = $("#prev_link");
 
-  $("#next_link").click(function() {
+  $next_link.bind("mouseenter", function() {
+    $("#next_thumbnail").fadeIn();
+  }).bind("mouseleave", function() {
+    $("#next_thumbnail").fadeOut();
+  });
+
+  $prev_link.bind("mouseenter", function() {
+    $("#prev_thumbnail").fadeIn("fast");
+  }).bind("mouseleave", function() {
+    $("#prev_thumbnail").fadeOut("fast");
+  });
+
+  $next_link.click(function() {
     var $this = $(this);
+    if($this.hasClass("waiting")) {
+      startLoading();
+      $this.addClass("clicked");
+      return false;
+    }
     var $current_photo = $(".current:first:not(.changed)");
     var $next_photo = $(".next:first:not(.changed)");
     var $previous_photo = $(".previous:first:not(.changed)");
+    $(".paginate").addClass("waiting");
     $current_photo.fadeOut(function() {
       $next_photo.fullBg();
       $.ajax({
@@ -26,18 +48,29 @@ $(document).ready(function() {
           $previous_photo.addClass("next changed").removeClass("previous");
           $current_photo.addClass("previous changed").removeClass("current").show();
           $this.attr("href", data.next_photo.path);
-          $this.find("img:first").attr("src", data.next_photo.small_picture);
           $("#prev_link").attr("href", data.previous_photo.path);
-          $("#prev_link").find("img:first").attr("src", data.previous_photo.small_picture);
+          $next_thumbnail.attr("src", data.next_photo.small_picture);
+          $prev_thumbnail.attr("src", data.previous_photo.small_picture);
           $(".changed").removeClass("changed");
+          $(".paginate").removeClass("waiting");
+          if($this.hasClass("clicked")) {
+            stopLoading();
+            $this.removeClass("clicked");
+            $this.click();
+          }
         }
       });
     });
     return false;
   });
 
-  $("#prev_link").click(function() {
+  $prev_link.click(function() {
     var $this = $(this);
+    if($this.hasClass("waiting")) {
+      startLoading();
+      $this.addClass("clicked");
+      return false;
+    }
     var $current_photo = $(".current:first:not(.changed)");
     var $next_photo = $(".next:first:not(.changed)");
     var $previous_photo = $(".previous:first:not(.changed)");
@@ -45,6 +78,7 @@ $(document).ready(function() {
     $previous_photo.addClass("next").removeClass("previous");
     $next_photo = $(".next:first:not(.changed)");
     $previous_photo = $(".previous:first:not(.changed)");
+    $(".paginate").addClass("waiting");
     $current_photo.fadeOut(function() {
       $next_photo.fullBg();
       $.ajax({
@@ -56,10 +90,16 @@ $(document).ready(function() {
           $next_photo.addClass("current changed").removeClass("next");
           $current_photo.addClass("next changed").removeClass("current").show();
           $this.attr("href", data.previous_photo.path);
-          $this.find("img:first").attr("src", data.previous_photo.small_picture);
           $("#next_link").attr("href", data.next_photo.path);
-          $("#next_link").find("img:first").attr("src", data.next_photo.small_picture);
+          $next_thumbnail.attr("src", data.next_photo.small_picture);
+          $prev_thumbnail.attr("src", data.previous_photo.small_picture);
           $(".changed").removeClass("changed");
+          $(".paginate").removeClass("waiting");
+          if($this.hasClass("clicked")) {
+            stopLoading();
+            $this.removeClass("clicked");
+            $this.click();
+          }
         }
       });
     });

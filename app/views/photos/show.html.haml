@@ -6,6 +6,8 @@
 =image_tag @previous_photo.picture(:original), :class => "fullBg previous"
 
 .next_link
-  =link_to "&rarr;#{image_tag(@next_photo.picture(:small))}", photo_path(@next_photo, :format => :json), :id => "next_link", :class => "paginate"
+  =link_to "&rarr;", photo_path(@next_photo, :format => :json), :id => "next_link", :class => "paginate"
+  =image_tag(@next_photo.picture(:small), :id => "next_thumbnail")
 .prev_link
-  =link_to "#{image_tag(@previous_photo.picture(:small))}&larr;", photo_path(@previous_photo, :format => :json), :id => "prev_link", :class => "paginate"
+  =link_to "&larr;", photo_path(@previous_photo, :format => :json), :id => "prev_link", :class => "paginate"
+  =image_tag(@previous_photo.picture(:small), :id => "prev_thumbnail")
