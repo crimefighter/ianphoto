@@ -1,10 +1,14 @@
 $(document).ready(function() {
+  var $curtain = $(".curtain");
   startLoading();
   $(".current:first").load(function() {
     $(this).fullBg();
     $(this).siblings(".fullBg").each(function() {
       $(this).fullBg({animated: false});
     });
+    if($(this).width() < $(this).height()) {
+      $curtain.show();
+    }
     stopLoading();
   });
 
@@ -32,10 +36,12 @@ $(document).ready(function() {
       $this.addClass("clicked");
       return false;
     }
+    $(".paginate").addClass("waiting");
     var $current_photo = $(".current:first:not(.changed)");
     var $next_photo = $(".next:first:not(.changed)");
     var $previous_photo = $(".previous:first:not(.changed)");
     $(".paginate").addClass("waiting");
+    $curtain.hide();
     $current_photo.fadeOut(function() {
       $next_photo.fullBg();
       $.ajax({
@@ -52,6 +58,7 @@ $(document).ready(function() {
           $next_thumbnail.attr("src", data.next_photo.small_picture);
           $prev_thumbnail.attr("src", data.previous_photo.small_picture);
           $(".changed").removeClass("changed");
+          $curtain.show();
           $(".paginate").removeClass("waiting");
           if($this.hasClass("clicked")) {
             stopLoading();
@@ -71,6 +78,7 @@ $(document).ready(function() {
       $this.addClass("clicked");
       return false;
     }
+    $(".paginate").addClass("waiting");
     var $current_photo = $(".current:first:not(.changed)");
     var $next_photo = $(".next:first:not(.changed)");
     var $previous_photo = $(".previous:first:not(.changed)");
@@ -78,7 +86,7 @@ $(document).ready(function() {
     $previous_photo.addClass("next").removeClass("previous");
     $next_photo = $(".next:first:not(.changed)");
     $previous_photo = $(".previous:first:not(.changed)");
-    $(".paginate").addClass("waiting");
+    $curtain.hide();
     $current_photo.fadeOut(function() {
       $next_photo.fullBg();
       $.ajax({
@@ -94,6 +102,7 @@ $(document).ready(function() {
           $next_thumbnail.attr("src", data.next_photo.small_picture);
           $prev_thumbnail.attr("src", data.previous_photo.small_picture);
           $(".changed").removeClass("changed");
+          $curtain.show();
           $(".paginate").removeClass("waiting");
           if($this.hasClass("clicked")) {
             stopLoading();

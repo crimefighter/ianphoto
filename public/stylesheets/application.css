@@ -158,6 +158,27 @@ img.previous {
   z-index: 2;
 }
 
+div.curtain {
+  display: none;
+  z-index: 5;
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.backup_curtain {
+  z-index: 3;
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #next_thumbnail {
   display: none;
   z-index: 100;
