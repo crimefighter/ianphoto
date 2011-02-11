@@ -1,5 +1,7 @@
 =javascript_include_tag "jquery.fullbg"
 =javascript_include_tag "photo_page"
+-content_for :title do
+  =@photo.name
 
 =image_tag @photo.picture(:original), :class => "fullBg current"
 =image_tag @next_photo.picture(:original), :class => "fullBg next"
@@ -7,9 +9,9 @@
 
 .next_link
   =link_to "&rarr;", photo_path(@next_photo, :format => :json), :id => "next_link", :class => "paginate"
-  =image_tag(@next_photo.picture(:small), :id => "next_thumbnail")
+  =image_tag(@next_photo.picture(:small), :id => "next_thumbnail", :class => "thumbnail")
 .prev_link
   =link_to "&larr;", photo_path(@previous_photo, :format => :json), :id => "prev_link", :class => "paginate"
-  =image_tag(@previous_photo.picture(:small), :id => "prev_thumbnail")
+  =image_tag(@previous_photo.picture(:small), :id => "prev_thumbnail", :class => "thumbnail")
 .curtain
 .backup_curtain
