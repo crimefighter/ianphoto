@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.3)
     actionmailer (2.3.10)
       actionpack (= 2.3.10)
     actionpack (2.3.10)
@@ -30,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   haml (~> 3.0.24)
   paperclip
   rails (~> 2.3.10)
