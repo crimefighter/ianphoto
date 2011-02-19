@@ -200,3 +200,45 @@ div.backup_curtain {
   -moz-box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
   box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
 }
+
+.static_page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 700px;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 10;
+  overflow: auto;
+  color: #fff;
+}
+
+.static_page .subcontainer {
+  padding: 10px;
+}
+
+.bottom_menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background: #000;
+  z-index: 20;
+  padding: 0;
+}
+
+.bottom_menu ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.bottom_menu ul li {
+  float: left;
+  margin: 0 10px;
+  color: #fff;
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+}

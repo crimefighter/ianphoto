@@ -12,6 +12,12 @@ class Photo < ActiveRecord::Base
 
   default_scope :order => "photos.position ASC"
 
+  def self.random
+    unless (c = count).zero?
+      first(:offset => rand(c))
+    end
+  end
+
   def self.set_order_on!(photo_ids, options = nil)
     options ||= {}
     starting_with = options.fetch(:staring_with, 1).to_i.pred

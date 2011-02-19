@@ -1,3 +1,23 @@
-%h1=@static_page.name
+=javascript_include_tag "jquery.fullbg"
+:javascript
+  $(document).ready(function() {
+    startLoading();
+    $(".fullBg:first").load(function() {
+      $(this).fullBg();
+      stopLoading();
+    });
+  });
 
-.body.textile=RedCloth.new(@static_page.body).to_html
+=image_tag @photo.picture(:original), :class => "fullBg"
+
+.static_page
+  .subcontainer
+    %h1=@static_page.name
+    .body.textile=RedCloth.new(@static_page.body).to_html
+
+.bottom_menu
+  %ul
+    %li Categories
+    %li Menu item 1
+    %li Item 2
+    %li Another menu item
