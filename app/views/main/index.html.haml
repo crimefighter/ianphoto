@@ -1,0 +1,15 @@
+=javascript_include_tag "jquery.fullbg"
+-content_for :title do
+  ianstudio
+:javascript
+  $(document).ready(function() {
+    startLoading();
+    $(".fullBg:first").load(function() {
+      $(this).fullBg();
+      stopLoading();
+    });
+  });
+
+.top_bar ianstudio
+=link_to image_tag(@photo.picture(:original), :class => "fullBg"), @photo
+=render "main/main_page_menu"

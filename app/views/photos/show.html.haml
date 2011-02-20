@@ -8,6 +8,7 @@
 =image_tag @next_photo.picture(:original), :class => "fullBg next"
 =image_tag @previous_photo.picture(:original), :class => "fullBg previous"
 
+=link_to "ianstudio", root_path, :class => :watermark
 .next_link
   =link_to "&rarr;", photo_path(@next_photo, :format => :json), :id => "next_link", :class => "paginate"
   =image_tag(@next_photo.picture(:small), :id => "next_thumbnail", :class => "thumbnail")

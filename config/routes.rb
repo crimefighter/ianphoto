@@ -9,4 +9,6 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :categories
     admin.resources :static_pages
   end
+
+  map.root :controller => :main, :action => :index
 end

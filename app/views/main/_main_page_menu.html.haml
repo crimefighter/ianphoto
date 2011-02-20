@@ -1,5 +1,5 @@
 -static_pages ||= @static_pages
-.bottom_menu
+.bottom_menu.super_elevated
   %ul.categories_menu
     -Category.all.each do |category|
       %li=link_to category, category
