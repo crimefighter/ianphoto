@@ -12,9 +12,13 @@ class Photo < ActiveRecord::Base
 
   default_scope :order => "photos.position ASC"
 
-  def self.random
+  def self.random(options = nil)
+    options ||= {}
+    if exclude_ids = options.fetch(:exclude_ids, nil)
+      conditions = ["photos.id NOT IN(?)", exclude_ids.to_a]
+    end
     unless (c = count).zero?
-      first(:offset => rand(c))
+      first(:offset => rand(c), :conditions => conditions)
     end
   end
 

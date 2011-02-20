@@ -1,5 +1,6 @@
 =javascript_include_tag "jquery.fullbg"
 =javascript_include_tag "static_pages"
+=javascript_include_tag "menu_elevator"
 -content_for :title do
   =@static_page.name
 :javascript
@@ -11,7 +12,7 @@
     });
   });
 
-=link_to image_tag(@photo.picture(:original), :class => "fullBg"), @photo
+=link_to image_tag(@photo.picture(:original), :class => "fullBg current"), @photo
 .static_page.solid
   =render "static_pages/content"
 
