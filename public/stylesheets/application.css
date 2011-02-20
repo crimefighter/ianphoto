@@ -207,14 +207,21 @@ div.backup_curtain {
   left: 0;
   width: 700px;
   height: 100%;
-  background: rgba(0,0,0,0.8);
   z-index: 10;
   overflow: auto;
-  color: #fff;
+  background: #fff;
 }
 
 .static_page .subcontainer {
   padding: 10px;
+}
+
+.static_page.obscure {
+  left: -700px;
+}
+
+.fullBg.obscure {
+  left: 700px !important;
 }
 
 .bottom_menu {
@@ -241,4 +248,9 @@ div.backup_curtain {
   padding: 0;
   line-height: 24px;
   font-size: 14px;
+}
+
+.bottom_menu ul li a {
+  color: #fff;
+  text-decoration: none;
 }

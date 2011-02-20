@@ -9,4 +9,11 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
+
+  before_filter :load_static_pages
+
+  protected
+    def load_static_pages
+      @static_pages = StaticPage.all
+    end
 end

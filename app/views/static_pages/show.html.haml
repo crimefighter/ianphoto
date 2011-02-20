@@ -1,4 +1,7 @@
 =javascript_include_tag "jquery.fullbg"
+=javascript_include_tag "static_pages"
+-content_for :title do
+  =@static_page.name
 :javascript
   $(document).ready(function() {
     startLoading();
@@ -8,16 +11,8 @@
     });
   });
 
-=image_tag @photo.picture(:original), :class => "fullBg"
+=link_to image_tag(@photo.picture(:original), :class => "fullBg"), @photo
+.static_page.solid
+  =render "static_pages/content"
 
-.static_page
-  .subcontainer
-    %h1=@static_page.name
-    .body.textile=RedCloth.new(@static_page.body).to_html
-
-.bottom_menu
-  %ul
-    %li Categories
-    %li Menu item 1
-    %li Item 2
-    %li Another menu item
+=render "main/static_pages_menu"

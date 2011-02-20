@@ -59,7 +59,7 @@ $(document).ready(function() {
           $prev_thumbnail.attr("src", data.previous_photo.small_picture);
           $(".changed").removeClass("changed");
           $curtain.show();
-          window.history.pushState({}, data.next_photo.name, data.next_photo.html_path)
+          window.history.pushState({}, data.next_photo.name, data.next_photo.html_path);
           document.title = data.next_photo.name;
           $(".paginate").removeClass("waiting");
           if($this.hasClass("clicked")) {

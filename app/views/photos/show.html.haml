@@ -1,5 +1,6 @@
 =javascript_include_tag "jquery.fullbg"
 =javascript_include_tag "photo_page"
+=javascript_include_tag "static_pages"
 -content_for :title do
   =@photo.name
 
@@ -15,3 +16,6 @@
   =image_tag(@previous_photo.picture(:small), :id => "prev_thumbnail", :class => "thumbnail")
 .curtain
 .backup_curtain
+.static_page.obscure
+
+=render "main/static_pages_menu"
