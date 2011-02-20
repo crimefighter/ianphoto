@@ -1,6 +1,7 @@
-$(document).ready(function() {
+jQuery(function($) {
   var $curtain = $(".curtain");
   startLoading();
+
   $(".current:first").load(function() {
     $(this).fullBg();
     $(this).siblings(".fullBg").each(function() {
