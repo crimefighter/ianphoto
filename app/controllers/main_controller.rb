@@ -1,6 +1,8 @@
 class MainController < ApplicationController
   def index
-    @photo = Photo.random
-    @next_photo = Photo.random(:exclude_ids => @photo.id)
+    @photos = Photo.shuffled
+    @photo = @photos.first
+    @next_photo = @photos.second
+    @json_collection = @photos.throw_back(@photo, @next_photo).to_json_collection
   end
 end

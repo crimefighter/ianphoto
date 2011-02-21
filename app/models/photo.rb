@@ -9,8 +9,30 @@ class Photo < ActiveRecord::Base
 
   named_scope :previous, lambda { |p| {:order => "photos.position DESC", :conditions => ["photos.position < ? AND photos.category_id = ?", p.position, p.category_id], :limit => 1} }
   named_scope :next, lambda { |p| {:order => "photos.position ASC", :conditions => ["photos.position > ? AND photos.category_id = ?", p.position, p.category_id], :limit => 1} }
+  named_scope :shuffled, :order => "random()"
+  named_scope :exclude, lambda {|photos| {:conditions => ["id NOT IN (?)", photos.to_a.map(&:to_i)]} }
+  named_scope :throw_back, lambda {|photos| {:order => "(id NOT IN (#{photos.to_a.map(&:to_i).join(",")})) DESC"}} #ensures that passed photos are at the end of collection
 
   default_scope :order => "photos.position ASC"
+
+  def to_i
+    id
+  end
+
+  def self.to_json_collection(options = nil)
+    options ||= {}
+    current_id = options.fetch(:current, 0).to_i
+    current_index = incrementoid = 0
+    pure_data = scoped({}).map {|photo|
+      parameters = [:id, :name, :description, [:picture, :original], [:picture, :thumbnail]].map do |parameter|
+        [parameter.to_a.reverse.join("_"), photo.send(*parameter.to_a)]
+      end
+      current_index = incrementoid if current_id == photo.id
+      incrementoid+=1
+      Hash[*parameters.flatten]
+    }
+    {:items => pure_data, :start => options.fetch(:start_index, current_index)}.to_json
+  end
 
   def self.random(options = nil)
     options ||= {}

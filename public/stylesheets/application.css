@@ -163,7 +163,7 @@ img {
   background: #000;
 }
 
-img.current {
+img.current, img.title {
   z-index: 6;
 }
 
