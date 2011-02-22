@@ -55,6 +55,9 @@ jQuery(function($) {
   }).bind("mouseleave", function() {
     $("#prev_thumbnail").hide();
   });
+  $(".current:first").bind("mousemove", function() {
+    $(".thumbnail").hide();
+  });
 
   $next_link.click(function() {
     var $this = $(this);
@@ -131,9 +134,9 @@ jQuery(function($) {
       $("#next_link").attr("href", data.next_photo.path);
       $next_thumbnail.attr("src", data.next_photo.small_picture);
       $prev_thumbnail.bind("load", function() {
-      }).attr("src", data.previous_photo.small_picture);
         $this.trigger("mouseenter");
         $(this).unbind("load");
+      }).attr("src", data.previous_photo.small_picture);
       $(".changed").removeClass("changed");
       $curtain.show();
       if(window.history.pushState) {
