@@ -238,11 +238,7 @@ div.backup_curtain {
 }
 
 .static_page.obscure {
-  left: -700px;
-}
-
-.fullBg.obscure {
-  left: 700px !important;
+  left: -800px;
 }
 
 .bottom_menu {

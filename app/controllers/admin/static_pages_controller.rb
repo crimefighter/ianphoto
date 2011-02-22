@@ -35,4 +35,14 @@ class Admin::StaticPagesController < ApplicationController
     redirect_to admin_static_pages_path
   end
 
+  def arrange
+    respond_to do |format|
+      if @static_page_ids = params[:static_pages].fetch(:static_page_id, nil)
+        StaticPage.set_order_on!(@static_page_ids)
+        format.js { head :ok }
+      else
+        format.js { render :nothing }
+      end
+    end
+  end
 end

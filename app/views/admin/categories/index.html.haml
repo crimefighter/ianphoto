@@ -1,9 +1,10 @@
 :javascript
   $(document).ready(function() {
     $(".edit_form").hide();
-    $("a.edit").click(function() {
-      $(this).parent().find(".edit_form").toggle();
-      return false;
+    $("ul.categories").sortable({
+      stop: function(ev, ui) {
+        $("#arrange_categories_form").ajaxSubmit();
+      }
     });
   });
 
@@ -11,14 +12,13 @@
   %h2 No categories exist
 -else
   %h2 Manage categories
-  %ul
-    -@categories.each do |category|
-      %li.m-10
-        =link_to category, admin_category_path(category)
-        (#{link_to "Edit", "#", :class => :edit} | #{link_to "Remove", admin_category_path(category), :method => :delete, :confirm => "Are you sure?"})
-        %div.bordered.edit_form.m-10
-          =render "form", :category => category
-          .clear
+  -form_tag arrange_admin_categories_path, :id => "arrange_categories_form", :method => :put do
+    %ul.categories
+      -@categories.each do |category|
+        %li.m-10
+          =hidden_field_tag "categories[category_id]", category.id
+          =link_to category, admin_category_path(category)
+          (#{link_to "Edit", edit_admin_category_path(category), :class => :edit} | #{link_to "Remove", admin_category_path(category), :method => :delete, :confirm => "Are you sure?"})
 
 %h2 Add new category
 =render "form"

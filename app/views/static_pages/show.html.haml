@@ -6,7 +6,7 @@
 :javascript
   jQuery(function($) {
     startLoading();
-    $(".fullBg:first").load(function() {
+    $(".fullBg:first").baked(function() {
       $(this).fullBg();
       stopLoading();
     });

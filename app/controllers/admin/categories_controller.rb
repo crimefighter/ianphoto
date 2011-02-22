@@ -43,6 +43,17 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  def arrange
+    respond_to do |format|
+      if @category_ids = params[:categories].fetch(:category_id, nil)
+        Category.set_order_on!(@category_ids)
+        format.js { head :ok }
+      else
+        format.js { render :nothing }
+      end
+    end
+  end
+
   def destroy
     @category = Category.find(params[:id])
     if @category.photos.exists?

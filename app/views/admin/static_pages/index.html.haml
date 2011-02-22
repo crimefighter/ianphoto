@@ -1,16 +1,27 @@
+:javascript
+  $(document).ready(function() {
+    $("ul.static_pages").sortable({
+      stop: function(ev, ui) {
+        $("#arrange_static_pages_form").ajaxSubmit();
+      }
+    });
+  });
+
 -if @static_pages.blank?
   %h2 No static pages exist
   =link_to "Create first static page", new_admin_static_page_path
 -else
   %h2 Manage static pages
   =link_to "Add static page", new_admin_static_page_path
-  %ul
-    -@static_pages.each do |static_page|
-      %li.m-10
-        =link_to static_page, static_page_path(static_page)
-        (
-        =link_to "Edit", edit_admin_static_page_path(static_page)
-        |
-        =link_to "Remove", admin_static_page_path(static_page), :method => :delete, :confirm => "Are you sure?"
-        )
+  -form_tag arrange_admin_static_pages_path, :id => "arrange_static_pages_form", :method => :put do
+    %ul.static_pages
+      -@static_pages.each do |static_page|
+        %li.m-10
+          =hidden_field_tag "static_pages[static_page_id]", static_page.id
+          =link_to static_page, static_page_path(static_page)
+          (
+          =link_to "Edit", edit_admin_static_page_path(static_page)
+          |
+          =link_to "Remove", admin_static_page_path(static_page), :method => :delete, :confirm => "Are you sure?"
+          )
 
