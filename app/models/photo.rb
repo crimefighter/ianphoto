@@ -12,6 +12,7 @@ class Photo < ActiveRecord::Base
   named_scope :shuffled, :order => "random()"
   named_scope :exclude, lambda {|photos| {:conditions => ["id NOT IN (?)", photos.to_a.map(&:to_i)]} }
   named_scope :throw_back, lambda {|photos| {:order => "(id NOT IN (#{photos.to_a.map(&:to_i).join(",")})) DESC"}} #ensures that passed photos are at the end of collection
+  named_scope :for_front_page, lambda {|photos| {:conditions => {:promote_to_front_page => true}}}
 
   default_scope :order => "photos.position ASC"
 
