@@ -4,7 +4,7 @@ jQuery(function($) {
   var $curtain = $(".curtain");
 
   startLoading();
-  $(".title:first").load(function() {
+  $(".title:first").baked(function() {
     $(this).fullBg();
     if($(this).width() < $(this).height()) {
       $curtain.show();
@@ -12,7 +12,8 @@ jQuery(function($) {
     stopLoading();
     initRotation();
   });
-  $(".next:first").load(function() {
+
+  $(".next:first").baked(function() {
     $(this).fullBg({animated:false});
   });
 
@@ -20,15 +21,22 @@ jQuery(function($) {
     window.setTimeout(rotate, interval);
   }
 
-  function rotate() {
+  function step() {
     position++; if(position >= photos_collection.items.length) { position = 0 }
+  }
+
+  function rotate() {
+    step();
     var photo = photos_collection.items[position];
     var $title_photo = $(".title:first:not(.changed)");
     var $next_photo = $(".next:first:not(.changed)");
     $curtain.hide();
     $title_photo.fadeOut(function() {
       $next_photo.fullBg();
-      $title_photo.attr("src", photo.original_picture);
+      $title_photo.bind("load", function() {
+        $(this).fullBg({animated: false, reinitialize_image: true});
+        $(this).unbind("load");
+      }).attr("src", photo.original_picture);
       $next_photo.addClass("title changed").removeClass("next");
       $title_photo.addClass("next changed").removeClass("title").show();
       $(".changed").removeClass("changed");

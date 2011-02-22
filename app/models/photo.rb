@@ -19,18 +19,21 @@ class Photo < ActiveRecord::Base
     id
   end
 
-  def self.to_json_collection(options = nil)
+  def self.to_json_collection(options = nil, &block)
     options ||= {}
     current_id = options.fetch(:current, 0).to_i
     current_index = incrementoid = 0
     pure_data = scoped({}).map {|photo|
-      parameters = [:id, :name, :description, [:picture, :original], [:picture, :thumbnail]].map do |parameter|
+      parameters = [:id, :name, :description, [:picture, :original], [:picture, :small]].map do |parameter|
         [parameter.to_a.reverse.join("_"), photo.send(*parameter.to_a)]
       end
       current_index = incrementoid if current_id == photo.id
       incrementoid+=1
-      Hash[*parameters.flatten]
+      Hash[*parameters.flatten].symbolize_keys
     }
+    if block_given?
+      pure_data.each(&block)
+    end
     {:items => pure_data, :start => options.fetch(:start_index, current_index)}.to_json
   end
 
