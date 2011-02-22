@@ -1,0 +1,4 @@
+%h1 Admin area
+%ul
+  -["categories", "static_pages"].each do |page_name|
+    %li=link_to page_name.humanize, send("admin_#{page_name}_path")

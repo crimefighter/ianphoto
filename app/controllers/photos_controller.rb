@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   def index
+    redirect_to :root
   end
 
   def show
