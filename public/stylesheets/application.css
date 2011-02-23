@@ -233,6 +233,10 @@ div.backup_curtain {
   background: #fff;
 }
 
+.static_page h1 a {
+  text-decoration: none;
+}
+
 .static_page .subcontainer {
   padding: 10px;
 }

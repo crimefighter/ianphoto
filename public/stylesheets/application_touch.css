@@ -1,0 +1,62 @@
+.touch .watermark {
+  font-size: 72px;
+}
+
+.touch .body {
+  background: #000;
+}
+
+.touch .next_link, .touch .prev_link {
+  background: transparent;
+  height: 100%;
+  width: 30%;
+  padding: 0;
+}
+
+
+.touch .next_link a, .touch .prev_link a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.touch .prev_link {
+  left: 0;
+  top: 0;
+}
+
+.touch .next_link {
+  right: 0;
+  top: 0;
+}
+
+.touch .bottom_menu {
+  display: none;
+}
+
+.touch .bottom_menu.super_elevated {
+  display: block;
+  height: 30%;
+}
+
+.touch .bottom_menu.super_elevated ul li {
+  font-size: 42px;
+  line-height: 42px;
+  margin: 20px 20px;
+}
+
+.touch .bottom_menu.super_elevated ul.categories_menu li {
+  font-size: 56px;
+}
+
+.touch .static_page {
+  width: 80%;
+  font-size: 42px;
+}
+
+.touch .static_page p {
+  font-size: 36px;
+  background: #fff;
+  color: #000;
+  border: none;
+}

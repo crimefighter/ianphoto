@@ -10,6 +10,7 @@ class Admin::PhotosController < ApplicationController
   def create
     @photo = Photo.new(params[:photo])
     if @photo.save
+      Photo.set_order_on!(@photo.category.photo_ids)
       redirect_to admin_category_path(@photo.category_id)
     else
       render "new"

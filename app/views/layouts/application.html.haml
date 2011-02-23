@@ -1,8 +1,10 @@
 !!!
-%html
+%html.no-js
   %title=yield :title
   %head
     =stylesheet_link_tag "application"
+    =stylesheet_link_tag "application_touch", :media => "only screen"
+    =javascript_include_tag "modernizr"
     =javascript_include_tag "jquery"
     =javascript_include_tag "jquery_ui"
     =javascript_include_tag "jquery_form"

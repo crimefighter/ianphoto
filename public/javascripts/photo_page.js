@@ -44,20 +44,22 @@ jQuery(function($) {
     }
   }
 
-  $next_link.bind("mouseenter", function() {
-    $("#next_thumbnail").fadeIn();
-  }).bind("mouseleave", function() {
-    $("#next_thumbnail").fadeOut();
-  });
+  if(!Modernizr.touch) {
+    $next_link.bind("mouseenter", function() {
+      $("#next_thumbnail").fadeIn();
+    }).bind("mouseleave", function() {
+      $("#next_thumbnail").fadeOut();
+    });
 
-  $prev_link.bind("mouseenter", function() {
-    $("#prev_thumbnail").fadeIn("fast");
-  }).bind("mouseleave", function() {
-    $("#prev_thumbnail").hide();
-  });
-  $(".current:first").bind("mousemove", function() {
-    $(".thumbnail").hide();
-  });
+    $prev_link.bind("mouseenter", function() {
+      $("#prev_thumbnail").fadeIn("fast");
+    }).bind("mouseleave", function() {
+      $("#prev_thumbnail").hide();
+    });
+    $(".current:first").bind("mousemove", function() {
+      $(".thumbnail").hide();
+    });
+  }
 
   $next_link.click(function() {
     var $this = $(this);
