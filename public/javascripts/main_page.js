@@ -6,6 +6,7 @@ jQuery(function($) {
   startLoading();
   $(".title:first").baked(function() {
     $(this).fullBg();
+    $(this).removeClass("invisible");
     if($(this).width() < $(this).height()) {
       $curtain.show();
     }
@@ -31,14 +32,15 @@ jQuery(function($) {
     var $title_photo = $(".title:first:not(.changed)");
     var $next_photo = $(".next:first:not(.changed)");
     $curtain.hide();
+    $next_photo.removeClass("invisible");
     $title_photo.fadeOut(function() {
       $next_photo.fullBg();
-      $title_photo.bind("load", function() {
+      $title_photo.baked(function() {
         $(this).fullBg({animated: false, reinitialize_image: true});
         $(this).unbind("load");
       }).attr("src", photo.original_picture);
       $next_photo.addClass("title changed").removeClass("next");
-      $title_photo.addClass("next changed").removeClass("title").show();
+      $title_photo.addClass("next changed").removeClass("title").addClass("invisible").show();
       $(".changed").removeClass("changed");
       $curtain.show();
       initRotation();

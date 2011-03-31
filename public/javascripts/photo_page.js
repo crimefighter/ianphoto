@@ -5,6 +5,7 @@ jQuery(function($) {
 
   $(".current:first").baked(function() {
     $(this).fullBg();
+    $(this).removeClass("invisible");
     $(".fullBg:not(.current)").each(function() {
       $(this).fullBg({animated: false});
     });
@@ -70,6 +71,7 @@ jQuery(function($) {
     $(".paginate").addClass("waiting");
     $(".thumbnail").hide();
     $curtain.hide();
+    $next_photo.removeClass("invisible");
     $current_photo.fadeOut(function() {
       $next_photo.fullBg();
       $current_photo.fullBg({animated: false});
@@ -84,8 +86,8 @@ jQuery(function($) {
         $(this).unbind("load");
       }).attr("src", data.next_photo.original_picture);
       $next_photo.addClass("current changed").removeClass("next");
-      $previous_photo.addClass("next changed").removeClass("previous");
-      $current_photo.addClass("previous changed").removeClass("current").show();
+      $previous_photo.addClass("next changed").removeClass("previous").addClass("invisible");
+      $current_photo.addClass("previous changed").removeClass("current").addClass("invisible").show();
       $this.attr("href", data.next_photo.path);
       $("#prev_link").attr("href", data.previous_photo.path);
       $next_thumbnail.baked(function() {
@@ -117,6 +119,7 @@ jQuery(function($) {
     $next_photo = $(".next:first:not(.changed)");
     $previous_photo = $(".previous:first:not(.changed)");
     $curtain.hide();
+    $next_photo.removeClass("invisible");
     $current_photo.fadeOut(function() {
       $next_photo.fullBg();
       $current_photo.fullBg({animated: false});
@@ -127,15 +130,16 @@ jQuery(function($) {
         current_photo: photos_collection.items[position]
       };
       $previous_photo.baked(function() {
-        $this.trigger("mouseenter");
+        $(this).fullBg({animated: false, reinitialize_image: true});
         $(this).unbind("load");
       }).attr("src", data.previous_photo.original_picture);
       $next_photo.addClass("current changed").removeClass("next");
-      $current_photo.addClass("next changed").removeClass("current").show();
+      $current_photo.addClass("next changed").removeClass("current").addClass("invisible").show();
+      $previous_photo.addClass("invisible");
       $this.attr("href", data.previous_photo.path);
       $("#next_link").attr("href", data.next_photo.path);
       $next_thumbnail.attr("src", data.next_photo.small_picture);
-      $prev_thumbnail.bind("load", function() {
+      $prev_thumbnail.baked(function() {
         $this.trigger("mouseenter");
         $(this).unbind("load");
       }).attr("src", data.previous_photo.small_picture);
