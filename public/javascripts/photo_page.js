@@ -72,8 +72,8 @@ jQuery(function($) {
     $(".thumbnail").hide();
     $curtain.hide();
     $next_photo.removeClass("invisible");
+    $next_photo.fullBg();
     $current_photo.fadeOut(function() {
-      $next_photo.fullBg();
       $current_photo.fullBg({animated: false});
       step();
       var data = {
@@ -120,8 +120,8 @@ jQuery(function($) {
     $previous_photo = $(".previous:first:not(.changed)");
     $curtain.hide();
     $next_photo.removeClass("invisible");
+    $next_photo.fullBg();
     $current_photo.fadeOut(function() {
-      $next_photo.fullBg();
       $current_photo.fullBg({animated: false});
       stepBack();
       var data = {
