@@ -35,7 +35,7 @@ jQuery(function($) {
     $next_photo.removeClass("invisible");
     $title_photo.fadeOut(function() {
       $next_photo.fullBg();
-      $title_photo.baked(function() {
+      $title_photo.bind("load", function() {
         $(this).fullBg({animated: false, reinitialize_image: true});
         $(this).unbind("load");
       }).attr("src", photo.original_picture);

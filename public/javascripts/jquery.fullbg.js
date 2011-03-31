@@ -54,6 +54,7 @@
           width: bgImg.width(),
           height: bgImg.height()
         }
+        var img_ratio = img.width/img.height;
         var win = {
           width: $(window).width(),
           height: $(window).height()
@@ -66,7 +67,7 @@
           width: (ratio.height * img.width),
           height: (ratio.width * img.height)
         }
-        if((diff.height > win.height) && bgImg.data("img_ratio") > 1) {
+        if((diff.height > win.height) && img_ratio > 1) {
           bgImg.css({
             width: win.width + 'px',
             height: ''

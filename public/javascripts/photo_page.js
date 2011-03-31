@@ -129,7 +129,7 @@ jQuery(function($) {
         next_photo: photos_collection.items[cycle(position, photos_collection.items)],
         current_photo: photos_collection.items[position]
       };
-      $previous_photo.baked(function() {
+      $previous_photo.bind("load", function() {
         $(this).fullBg({animated: false, reinitialize_image: true});
         $(this).unbind("load");
       }).attr("src", data.previous_photo.original_picture);
