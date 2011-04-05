@@ -5,9 +5,11 @@
 (function($) {
   $.fn.baked = function(callback) {
     $this = $(this);
-    $this.bind("load", callback).each(function() {
+    $this.each(function() {
       if (this.complete || this.complete === undefined) {
         $(this).each(callback);
+      } else {
+        $this.one("load", callback);
       }
     });
     return $this;
