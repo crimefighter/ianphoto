@@ -9,7 +9,8 @@
   $.fn.fullBg = function(options){
     var defaults = {
       animated: true,
-      reinitialize_image: false
+      reinitialize_image: false,
+      callback: false
     }
     options = $.extend(defaults, options);
     var bgImg = $(this);		
@@ -118,5 +119,6 @@
     }
 
     bgImg.fitToWindow();
+    if(typeof options.callback == "function") options.callback();
   };
 })(jQuery);
