@@ -1,4 +1,5 @@
 =javascript_include_tag "jquery.fullbg"
+=javascript_include_tag "preload_image"
 =javascript_include_tag "photo_page"
 =javascript_include_tag "static_pages"
 =javascript_include_tag "menu_elevator"
@@ -7,9 +8,7 @@
 :javascript
   var photos_collection = #{@json_collection};
 
-=image_tag @photo.picture(:original), :class => "fullBg current invisible"
-=image_tag @next_photo.picture(:original), :class => "fullBg next invisible"
-=image_tag @previous_photo.picture(:original), :class => "fullBg previous invisible"
+=image_tag "", :class => "fullBg current"
 
 =link_to "ianstudio", root_path, :class => :watermark
 .next_link
