@@ -8,7 +8,6 @@
 (function($) {
 
   $.fn.fitToWindow = function(callback) {
-    console.log("fit");
     bgImg = $(this);
     var img = {
       width: bgImg.width(),
