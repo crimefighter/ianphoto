@@ -4,9 +4,7 @@ jQuery(function($) {
   var $curtain = $(".curtain");
   var title_photo = ".title:first";
 
-  startLoading();
   $.preloadImage(photos_collection, position, function() {
-    stopLoading();
     rotate();
   });
 

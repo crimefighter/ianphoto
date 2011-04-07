@@ -8,9 +8,7 @@ jQuery(function($) {
   var $next_link = $("#next_link");
   var $prev_link = $("#prev_link");
 
-  startLoading();
   $.preloadImage(photos_collection, position, function() {
-    stopLoading();
     rotateTo(position, afterRotation);
   });
   
