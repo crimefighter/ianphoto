@@ -12,11 +12,11 @@
 
 =link_to "ianstudio", root_path, :class => :watermark
 .next_link
-  =link_to "&rarr;", photo_path(@next_photo, :format => :json), :id => "next_link", :class => "paginate"
-  =image_tag(@next_photo.picture(:small), :id => "next_thumbnail", :class => "thumbnail")
+  =link_to "&rarr;", "#", :id => "next_link", :class => "paginate"
+  =image_tag("", :id => "next_thumbnail", :class => "thumbnail")
 .prev_link
-  =link_to "&larr;", photo_path(@previous_photo, :format => :json), :id => "prev_link", :class => "paginate"
-  =image_tag(@previous_photo.picture(:small), :id => "prev_thumbnail", :class => "thumbnail")
+  =link_to "&larr;", "#", :id => "prev_link", :class => "paginate"
+  =image_tag("", :id => "prev_thumbnail", :class => "thumbnail")
 .curtain
 .backup_curtain
 .static_page.obscure

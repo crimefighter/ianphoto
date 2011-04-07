@@ -2,6 +2,7 @@ jQuery(function($) {
   var position = photos_collection.start;
   var interval = 5000;
   var $curtain = $(".curtain");
+  var title_photo = ".title:first";
 
   startLoading();
   $.preloadImage(photos_collection, position, function() {
@@ -19,7 +20,6 @@ jQuery(function($) {
   }
 
   function rotate() {
-    var title_photo = ".title:first";
     $curtain.fadeIn("slow", function() {
       $.preloadImage(photos_collection, position, function() {
         $(title_photo).replaceWith($(this).addClass("title fullBg"));

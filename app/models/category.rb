@@ -13,4 +13,5 @@ class Category < ActiveRecord::Base
   end
 
   def to_s; name end
+  def to_i; id end
 end

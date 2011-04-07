@@ -22,8 +22,8 @@ $(document).ready(function() {
     return false;
   });
 
-  $(".current, .paginate").click(function(event) {
+  $(".current, .paginate").live("click", function(event) {
     $(".static_page:first").addClass("obscure", "fast");
-    event.preventDefault();
+    event.stopPropagation();
   });
 });
