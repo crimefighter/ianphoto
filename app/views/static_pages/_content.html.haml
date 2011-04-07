@@ -1,6 +1,6 @@
 -static_page ||= @static_page
 .subcontainer{:id => "static_page_#{static_page.id}"}
   %h1
-    =link_to "&larr;", root_path
+    =link_to image_tag("close.png"), "#", :class => :close_static_page
     =static_page.name
   .body.textile=RedCloth.new(static_page.body).to_html

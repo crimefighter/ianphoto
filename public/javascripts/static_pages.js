@@ -22,8 +22,12 @@ $(document).ready(function() {
     return false;
   });
 
-  $(".current, .paginate").live("click", function(event) {
-    $(".static_page:first").addClass("obscure", "fast");
+  $(".current, .paginate, .close_static_page").live("click", function(event) {
+    if($("#link_to_photo").size()) {
+      window.location.href = $("#link_to_photo").attr("href");
+    } else {
+      $(".static_page:first").addClass("obscure", "fast");
+    }
     event.stopPropagation();
   });
 });

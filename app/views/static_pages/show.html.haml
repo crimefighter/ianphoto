@@ -12,7 +12,7 @@
     });
   });
 
-=link_to image_tag(@photo.picture(:original), :class => "title fullBg"), @photo
+=link_to image_tag(@photo.picture(:original), :class => "title fullBg"), @photo, :id => :link_to_photo
 .static_page.solid
   =render "static_pages/content"
 

@@ -231,12 +231,23 @@ div.backup_curtain {
   background: #fff;
 }
 
+a.close_static_page {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: transparent;
+}
+
+a.close_static_page img {
+  background: transparent;
+}
+
 .static_page h1 a {
   text-decoration: none;
 }
 
 .static_page .subcontainer {
-  padding: 10px;
+  padding: 0 20px;
 }
 
 .static_page.obscure {
@@ -252,6 +263,7 @@ div.backup_curtain {
   background: #000;
   z-index: 50;
   padding: 0;
+  opacity: 0.7;
 }
 
 .bottom_menu ul {
@@ -281,10 +293,12 @@ div.backup_curtain {
 
 .bottom_menu.elevated {
   height: 70px;
+  opacity: 1;
 }
 
 .bottom_menu.super_elevated {
   height: 100px;
+  opacity: 1;
 }
 
 .top_bar {
