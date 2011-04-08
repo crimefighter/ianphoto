@@ -10,6 +10,9 @@ jQuery(function($) {
 
   $.preloadImage(photos_collection, position, function() {
     rotateTo(position, afterRotation);
+    if(photos_collection.items.length <= 1) {
+      $(".next_link, .prev_link").hide();
+    }
   });
   
   function cycle(number, array) {
