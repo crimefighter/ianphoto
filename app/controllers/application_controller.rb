@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     def require_authentication_for_admin
       if self.class.name.split("::").first.eql?("Admin")
         authenticate_or_request_with_http_basic do |username, password|
-          username == "foo" && password == "bar"
+          username == SHADOW["username"] && password == SHADOW["password"]
         end
       end
     end

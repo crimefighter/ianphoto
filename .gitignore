@@ -2,3 +2,4 @@ public/system/
 db/*.sqlite3
 log/
 tmp/
+config/shadow.yml
