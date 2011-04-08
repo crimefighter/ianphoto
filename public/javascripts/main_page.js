@@ -23,9 +23,11 @@ jQuery(function($) {
         $(title_photo).replaceWith($(this).addClass("title fullBg"));
         $(title_photo).fullBg(function() {
           $curtain.fadeOut("slow");
-          position = step();
-          initRotation();
-          $.preloadImage(photos_collection, position);
+          if(photos_collection.items.length > 1) {
+            position = step();
+            initRotation();
+            $.preloadImage(photos_collection, position);
+          }
         });
       });
     });
