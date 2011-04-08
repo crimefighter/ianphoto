@@ -23,6 +23,11 @@
 
 %br/
 
+-if @category.photos.blank?
+  %h3 This category is empty
+-else
+  %h3 Photos will appear in this exact order. Drag them to rearrange. Photos on front page appear in random order.
+
 -form_for [:admin, @category], :url => admin_category_path(:format => :js), :html => {:method => :put, :id => "sorting_form"} do |f|
   %ul.photos.inline-blocks
     -@category.photos.each do |photo|
