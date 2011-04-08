@@ -67,6 +67,18 @@ jQuery(function($) {
     }
     document.title = data.current_photo.name;
     $(".paginate").removeClass("waiting");
+
+    if(data.current_photo.description.length) {
+      $(".description_container .subcontainer").text(data.current_photo.description);
+      $(".description_trigger").show();
+    } else {
+      $(".description_trigger").hide();
+      if($(".description_trigger").hasClass("pushed_down")) {
+        $(".description_trigger").removeClass("pushed_down");
+        $(".description_container").addClass("obscure");
+      }
+    }
+
     $.preloadImage(photos_collection, next_position);
     $.preloadImage(photos_collection, previous_position);
   }
@@ -82,6 +94,19 @@ jQuery(function($) {
       $(".thumbnail").hide();
     });
   }
+
+  $(".description_trigger").click(function() {
+    $(".description_container").toggleClass("obscure", "fast");
+    $(this).toggleClass("pushed_down", "fast");
+    return false;
+  });
+
+  $(".current, .curtain, .backup_curtain").live("click", function(event) {
+    if($(".description_trigger").hasClass("pushed_down")) {
+      $(".description_trigger").click();
+      event.preventDefault();
+    }
+  });
 
   $next_link.click(function() {
     var $this = $(this);
