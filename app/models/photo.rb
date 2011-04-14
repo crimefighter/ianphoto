@@ -1,6 +1,8 @@
 class Photo < ActiveRecord::Base
   belongs_to :category
-  has_attached_file :picture, :styles => {:small => "200x200>"}
+  has_attached_file :picture, :styles => {:small => "200x200>", :processed => ""}, :processors => [:cropper]
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :reprocess_picture, :if => :cropping_attributes_supplied?
 
   validates_presence_of :name
   validates_presence_of :category_id
@@ -26,7 +28,7 @@ class Photo < ActiveRecord::Base
     current_id = options.fetch(:current, 0).to_i
     current_index = incrementoid = 0
     pure_data = scoped({}).map {|photo|
-      parameters = [:id, :name, :description, [:picture, :original], [:picture, :small]].map do |parameter|
+      parameters = [:id, :name, :description, [:picture, :processed], [:picture, :small]].map do |parameter|
         [parameter.to_a.reverse.join("_"), photo.send(*parameter.to_a)]
       end
       current_index = incrementoid if current_id == photo.id
@@ -57,17 +59,14 @@ class Photo < ActiveRecord::Base
     end
   end
 
-  def next(options = nil)
-    options ||= {}
-    next_photo = Photo.next(self).try(:first)
-    next_photo ||= self.category.photos.first if options.fetch(:cycle, false)
-    next_photo
+  def cropping_attributes_supplied?
+    return false if crop_x.to_i == 0 && crop_y.to_i == 0
+    return false if crop_w.to_i == 0 || crop_h.to_i == 0
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
 
-  def previous(options = nil)
-    options ||= {}
-    next_photo = Photo.previous(self).try(:first)
-    next_photo ||= self.category.photos.last if options.fetch(:cycle, false)
-    next_photo
-  end
+  private
+    def reprocess_picture
+      picture.reprocess!
+    end
 end

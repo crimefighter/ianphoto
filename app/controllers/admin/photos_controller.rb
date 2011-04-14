@@ -17,6 +17,10 @@ class Admin::PhotosController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
   def edit
     @photo = Photo.find(params[:id])
   end

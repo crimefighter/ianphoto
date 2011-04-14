@@ -363,3 +363,27 @@ a.close_static_page img {
   background: #333;
   opacity: 1;
 }
+
+.alignment_preview {
+  float: left;
+  position: relative;
+}
+
+.alignment_preview .border {
+  width: 100%;
+  height: 60%;
+  border: 2px solid #ff0000;
+  position: absolute;
+  left: -2px;
+}
+
+.alignment_preview.top .border {
+  top: 0;
+}
+.alignment_preview.center .border {
+  top: 50%;
+  margin-top: -20%;
+}
+.alignment_preview.bottom .border {
+  bottom: 0;
+}

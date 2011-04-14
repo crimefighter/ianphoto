@@ -4,7 +4,7 @@ $.preloadImage = function(photos_collection, position, callback) {
     photos_collection.items[position].preloaded_image = new Image();
     $(photos_collection.items[position].preloaded_image).baked(function() {
       if(typeof callback == "function") callback();
-    }).attr("src", photos_collection.items[position].original_picture);
+    }).attr("src", photos_collection.items[position].processed_picture);
   } else {
     if(typeof callback == "function")
       $(photos_collection.items[position].preloaded_image).baked(callback);

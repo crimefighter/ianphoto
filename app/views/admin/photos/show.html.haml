@@ -1,0 +1,24 @@
+=javascript_include_tag "jcrop"
+=javascript_include_tag "crop_image"
+=stylesheet_link_tag "jcrop"
+%h2 Cropping image
+%p Drag and drop and then click Crop. Mind that real picture is 4 times bigger.
+=image_tag @photo.picture(:original), :class => :croppable
+-form_for [:admin, @photo] do |f|
+  -%w(x y w h).each do |attr|
+    =f.hidden_field "crop_#{attr}", :id => "crop_#{attr}"
+  %p Choose the way this picture should be aligned when browser window is resized
+  .alignment_preview{:class => @photo.vertical_alignment || "center"}
+    =image_tag @photo.picture(:small)
+    .border
+  %p
+    =f.radio_button :vertical_alignment, "top", :class => :vertical_alignment
+    =f.label :vertical_alignment, "Stick to top", :value => "top"
+  %p
+    =f.radio_button :vertical_alignment, "center", :class => :vertical_alignment
+    =f.label :vertical_alignment, "Centered", :value => "center"
+  %p
+    =f.radio_button :vertical_alignment, "bottom", :class => :vertical_alignment
+    =f.label :vertical_alignment, "Stick to bottom", :value => "bottom"
+  .cl
+  %p=f.submit "Crop"
