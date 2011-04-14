@@ -5,6 +5,9 @@
         $("#sorting_form").ajaxSubmit();
       }
     });
+    $("input.promote_to_front_page").click(function() {
+      $(this).parent().ajaxSubmit();
+    });
   });
 
 %h2
@@ -37,6 +40,7 @@
         %br/
         =image_tag photo.picture(:small)
         %br/
+        %br/
         =link_to "show", photo_path(photo)
         |
         =link_to "crop", admin_photo_path(photo)
@@ -44,3 +48,8 @@
         =link_to "edit", edit_admin_photo_path(photo)
         |
         =link_to "delete", admin_photo_path(photo), :method => :delete, :confirm => "Are you sure?"
+        %br/
+        %small
+          -form_for [:admin, photo], :url => admin_photo_path(photo, :format => :js) do |f|
+            =f.check_box :promote_to_front_page, :id => "promote_to_front_page_#{photo.id}", :class => "promote_to_front_page"
+            =f.label :promote_to_front_page, "front page", :for => "promote_to_front_page_#{photo.id}"

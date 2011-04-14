@@ -22,5 +22,8 @@
       =f.radio_button :vertical_alignment, alignment_type, :class => :vertical_alignment, :checked => alignment_type.eql?(@photo.alignment)
       =f.label :vertical_alignment, alignment_type.humanize, :value => alignment_type
   .cl
-  %p=f.submit "Crop"
+  %p
+    =f.submit "Crop"
+    &nbsp;
+    =link_to "Cancel", admin_category_path(@photo.category_id)
   %p Cropping requires a few seconds and may be finished after you are redirected back to category page. If you don't see thumbnail changed, refresh category page.

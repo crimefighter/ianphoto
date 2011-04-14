@@ -27,10 +27,14 @@ class Admin::PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
-    if @photo.update_attributes(params[:photo])
-      redirect_to admin_category_path(@photo.category_id)
-    else
-      render "edit"
+    respond_to do |format|
+      if @photo.update_attributes(params[:photo])
+        format.html {redirect_to admin_category_path(@photo.category_id)}
+        format.js {head :ok}
+      else
+        format.html{render "edit"}
+        format.js {head :ok}
+      end
     end
   end
   
