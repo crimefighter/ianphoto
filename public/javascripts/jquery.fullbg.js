@@ -37,10 +37,20 @@
         width: ''
       });		
     }
-    bgImg.css({
+    var alignment = bgImg.attr("data-alignment");
+    var desired_css = {
       left: -(bgImg.width()-win.width)/2+'px',
-      top: -(bgImg.height()-win.height)/2+'px'
-    });
+    }
+    switch(alignment) {
+      case "top":
+        desired_css.top = 0;
+        break; 
+      case "bottom":
+        desired_css.bottom = 0;
+      default:
+        desired_css.top = -(bgImg.height()-win.height)/2+'px';
+    }
+    bgImg.css(desired_css);
     if(typeof callback == "function") callback();
   } 
 

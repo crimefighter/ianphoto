@@ -1,12 +1,13 @@
-=javascript_include_tag "jquery.fullbg"
-=javascript_include_tag "preload_image"
-=javascript_include_tag "photo_page"
-=javascript_include_tag "static_pages"
-=javascript_include_tag "menu_elevator"
+-content_for :js do
+  =javascript_include_tag "jquery.fullbg"
+  =javascript_include_tag "preload_image"
+  =javascript_include_tag "photo_page"
+  =javascript_include_tag "static_pages"
+  =javascript_include_tag "menu_elevator"
+  :javascript
+    var photos_collection = #{@json_collection};
 -content_for :title do
   =@photo.name
-:javascript
-  var photos_collection = #{@json_collection};
 
 =image_tag "loading.gif", :class => "fullBg current loading"
 

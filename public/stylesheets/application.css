@@ -367,6 +367,7 @@ a.close_static_page img {
 .alignment_preview {
   float: left;
   position: relative;
+  margin-right: 20px;
 }
 
 .alignment_preview .border {

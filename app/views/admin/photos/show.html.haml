@@ -5,20 +5,22 @@
 %p Drag and drop and then click Crop. Mind that real picture is 4 times bigger.
 =image_tag @photo.picture(:original), :class => :croppable
 -form_for [:admin, @photo] do |f|
-  -%w(x y w h).each do |attr|
+  -%w(x y w h x2 y2).each do |attr|
     =f.hidden_field "crop_#{attr}", :id => "crop_#{attr}"
-  %p Choose the way this picture should be aligned when browser window is resized
-  .alignment_preview{:class => @photo.vertical_alignment || "center"}
+  =f.hidden_field :crop_needed, :id => "crop_needed"
+  %p This is uncropped version of an image. Existing cropped version will not change if you submit this page not moving cropping edges. Unless you check this:
+  %p
+    =f.check_box :reset_cropping
+    =f.label :reset_cropping, "I want full image again"
+  %p in which case cropping will be forced to occur and you will get your image back like nothing ever happened
+  %h3 Choose the way this picture should be aligned when browser window is resized
+  %div{:class => "alignment_preview #{@photo.alignment}"}
     =image_tag @photo.picture(:small)
     .border
-  %p
-    =f.radio_button :vertical_alignment, "top", :class => :vertical_alignment
-    =f.label :vertical_alignment, "Stick to top", :value => "top"
-  %p
-    =f.radio_button :vertical_alignment, "center", :class => :vertical_alignment
-    =f.label :vertical_alignment, "Centered", :value => "center"
-  %p
-    =f.radio_button :vertical_alignment, "bottom", :class => :vertical_alignment
-    =f.label :vertical_alignment, "Stick to bottom", :value => "bottom"
+  -["top", "center", "bottom"].each do |alignment_type|
+    %p
+      =f.radio_button :vertical_alignment, alignment_type, :class => :vertical_alignment, :checked => alignment_type.eql?(@photo.alignment)
+      =f.label :vertical_alignment, alignment_type.humanize, :value => alignment_type
   .cl
   %p=f.submit "Crop"
+  %p Cropping requires a few seconds and may be finished after you are redirected back to category page. If you don't see thumbnail changed, refresh category page.

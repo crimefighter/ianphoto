@@ -1,18 +1,20 @@
-=javascript_include_tag "jquery.fullbg"
-=javascript_include_tag "static_pages"
-=javascript_include_tag "menu_elevator"
+-content_for :js do
+  =javascript_include_tag "jquery.fullbg"
+  =javascript_include_tag "static_pages"
+  =javascript_include_tag "menu_elevator"
+  :javascript
+    jQuery(function($) {
+      startLoading();
+      $(".fullBg:first").baked(function() {
+        $(this).fullBg();
+        stopLoading();
+      });
+    });
 -content_for :title do
   =@static_page.name
-:javascript
-  jQuery(function($) {
-    startLoading();
-    $(".fullBg:first").baked(function() {
-      $(this).fullBg();
-      stopLoading();
-    });
-  });
 
-=link_to image_tag(@photo.picture(:original), :class => "title fullBg"), @photo, :id => :link_to_photo
+
+=link_to image_tag(@photo.picture(:original), :class => "title fullBg", :"data-alignment" => @photo.alignment), @photo, :id => :link_to_photo
 .static_page.solid
   =render "static_pages/content"
 

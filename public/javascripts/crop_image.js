@@ -20,6 +20,7 @@ jQuery(function($) {
   function updateCrop(coords) {
     for(var i in coords) {
       $("#crop_"+i).val(coords[i]*ratio);
+      $("#crop_needed").val(!(coords.w == smaller_size.width && coords.h == smaller_size.height));
     }
   }
 

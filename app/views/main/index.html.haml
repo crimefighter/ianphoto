@@ -1,10 +1,11 @@
-=javascript_include_tag "jquery.fullbg"
-=javascript_include_tag "preload_image"
-=javascript_include_tag "main_page"
+-content_for :js do
+  =javascript_include_tag "jquery.fullbg"
+  =javascript_include_tag "preload_image"
+  =javascript_include_tag "main_page"
+  :javascript
+    var photos_collection = #{@json_collection};
 -content_for :title do
   ianstudio
-:javascript
-  var photos_collection = #{@json_collection};
 
 .top_bar ianstudio
 =image_tag "loading.gif", :class => "fullBg title loading"
