@@ -12,12 +12,12 @@ jQuery(function($) {
       height: Math.round(original_size.height/ratio)
     };
     $croppable.css(smaller_size);
-  });
 
-  $croppable.Jcrop({
-    onChange: updateCrop,
-    onSelect: updateCrop,
-    setSelect: [0, 0, smaller_size.width, smaller_size.height]
+    $croppable.Jcrop({
+      onChange: updateCrop,
+      onSelect: updateCrop,
+      setSelect: [0, 0, smaller_size.width, smaller_size.height]
+    });
   });
 
   function updateCrop(coords) {
