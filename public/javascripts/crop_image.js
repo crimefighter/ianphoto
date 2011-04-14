@@ -1,15 +1,18 @@
 jQuery(function($) {
   var $croppable = $(".croppable:first");
-  var original_size = {
-    width: $croppable.width(),
-    height: $croppable.height()
-  };
-  var ratio = 2;
-  var smaller_size = {
-    width: Math.round(original_size.width/ratio),
-    height: Math.round(original_size.height/ratio)
-  };
-  $croppable.css(smaller_size);
+  var original_size, smaller_size, ratio;
+  $croppable.baked(function() {
+    original_size = {
+      width: $croppable.width(),
+      height: $croppable.height()
+    };
+    ratio = 2;
+    smaller_size = {
+      width: Math.round(original_size.width/ratio),
+      height: Math.round(original_size.height/ratio)
+    };
+    $croppable.css(smaller_size);
+  });
 
   $croppable.Jcrop({
     onChange: updateCrop,
