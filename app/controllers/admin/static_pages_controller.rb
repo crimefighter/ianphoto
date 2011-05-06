@@ -22,7 +22,7 @@ class Admin::StaticPagesController < ApplicationController
 
   def update
     @static_page = StaticPage.find(params[:id])
-    if @static_page.update_attributes
+    if @static_page.update_attributes(params[:static_page])
       redirect_to admin_static_pages_path
     else
       render :edit
