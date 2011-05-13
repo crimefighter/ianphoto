@@ -15,7 +15,7 @@ module Ianphoto
 
 
     SHADOW = YAML.load_file("#{Rails.root}/config/shadow.yml")
-    if Rails.env == "production" or true
+    if Rails.env == "production"
       config.middleware.use("Rack::GoogleAnalytics", :web_property_id => SHADOW["ga_code"])
     end
   end
