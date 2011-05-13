@@ -3,4 +3,5 @@ db/*.sqlite3
 log/
 tmp/
 config/shadow.yml
+config/database.yml
 *.rails2
