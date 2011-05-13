@@ -13,8 +13,10 @@ module Ianphoto
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    if Rails.env == "production"
-      config.middleware.use("Rack::GoogleAnalytics", :web_property_id => "UA-0000000-1")
+
+    SHADOW = YAML.load_file("#{Rails.root}/config/shadow.yml")
+    if Rails.env == "production" or true
+      config.middleware.use("Rack::GoogleAnalytics", :web_property_id => SHADOW["ga_code"])
     end
   end
 end
