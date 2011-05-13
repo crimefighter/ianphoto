@@ -5,3 +5,4 @@ tmp/
 config/shadow.yml
 config/database.yml
 *.rails2
+Gemfile.lock
