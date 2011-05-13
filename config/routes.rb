@@ -1,15 +1,28 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :photos
-  map.resources :categories
+Ianphoto::Application.routes.draw do
+  resources :photos
+  resources :categories
 
-  map.static_page '/:slug.html', :controller => :static_pages, :action => :show
+  match '/:slug.html' => 'static_pages#show', :as => :static_page
 
-  map.namespace :admin do |admin|
-    admin.root :controller => :main, :action => :index
-    admin.resources :photos, :collection => {:bulk_edit => :get, :bulk_update => :put}
-    admin.resources :categories, :collection => {:arrange => :put}
-    admin.resources :static_pages, :collection => {:arrange => :put}
+  namespace :admin do
+    resources :photos do
+      collection do
+        get :bulk_edit
+        put :bulk_update
+      end
+    end
+    resources :categories do
+      collection do
+        put :arrange
+      end
+    end
+    resources :static_pages do
+      collection do
+        put :arrange
+      end
+    end
+    root :to => 'main#index'
   end
 
-  map.root :controller => :main, :action => :index
+  root :to => 'main#index'
 end

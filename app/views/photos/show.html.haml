@@ -13,10 +13,10 @@
 
 =link_to "ianstudio", root_path, :class => :watermark
 .next_link
-  =link_to "&rarr;", "#", :id => "next_link", :class => "paginate"
+  =link_to "&rarr;".html_safe, "#", :id => "next_link", :class => "paginate"
   =image_tag("", :id => "next_thumbnail", :class => "thumbnail")
 .prev_link
-  =link_to "&larr;", "#", :id => "prev_link", :class => "paginate"
+  =link_to "&larr;".html_safe, "#", :id => "prev_link", :class => "paginate"
   =image_tag("", :id => "prev_thumbnail", :class => "thumbnail")
 .curtain
 .backup_curtain

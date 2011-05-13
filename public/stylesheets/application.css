@@ -231,6 +231,10 @@ div.backup_curtain {
   background: #fff;
 }
 
+.body.textile {
+  background: #fff;
+}
+
 a.close_static_page {
   position: absolute;
   right: 20px;

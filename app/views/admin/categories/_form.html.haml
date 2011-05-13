@@ -1,6 +1,6 @@
 -category ||= @category
 -form_for [:admin, category] do |f|
-  =f.error_messages
+  =error_messages_for category
   %label{:for => :name} Category name:
   =f.text_field :name
   =f.submit "Save"

@@ -14,7 +14,7 @@
   Managing photos in
   %em=@category
 %p
-  =link_to "&larr; Back to categories index", admin_categories_path
+  =link_to "&larr; Back to categories index".html_safe, admin_categories_path
   |
   %strong=link_to "Upload new photo", new_admin_photo_path(:category_id => @category.id)
   |
