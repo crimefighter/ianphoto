@@ -226,9 +226,12 @@ div.backup_curtain {
   left: 0;
   width: 800px;
   height: 100%;
-  z-index: 40;
+  z-index: 60;
   overflow: auto;
   background: #fff;
+  -webkit-box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
 }
 
 .body.textile {
