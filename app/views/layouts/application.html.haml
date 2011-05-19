@@ -2,6 +2,7 @@
 %html.no-js
   %title=yield :title
   %head
+    =tag(:link, :rel=>"shortcut icon", :href=>"favicon.ico", :type=>"image/x-icon")
     =stylesheet_link_tag "application"
     =stylesheet_link_tag "application_touch", :media => "only screen"
     =javascript_include_tag "modernizr"
@@ -12,7 +13,6 @@
     =javascript_include_tag "baked"
     =yield :js
     =yield :css
-    %link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
   %body
     =flash
     =yield
