@@ -22,7 +22,7 @@ $(document).ready(function() {
     return false;
   });
 
-  $(".current, .paginate, .close_static_page").live("click", function(event) {
+  $(".current, .paginate, .close_static_page, .title").live("click", function(event) {
     if($("#link_to_photo").size()) {
       window.location.href = $("#link_to_photo").attr("href");
     } else {
