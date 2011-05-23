@@ -1,8 +1,9 @@
 -content_for :js do
   =javascript_include_tag "jquery.fullbg"
   =javascript_include_tag "preload_image"
-  =javascript_include_tag "main_page"
   =javascript_include_tag "static_pages"
+  =javascript_include_tag "main_page"
+  =javascript_include_tag "main_page_touch"
   :javascript
     var photos_collection = #{@json_collection};
 -content_for :title do
@@ -14,3 +15,4 @@
 .curtain
 .backup_curtain
 .static_page.obscure
+.touch_frame

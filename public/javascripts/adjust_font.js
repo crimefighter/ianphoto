@@ -1,4 +1,5 @@
 jQuery(function($) {
+  if(Modernizr.touch) return;
 
   var $top_bar = $(".top_bar");
   var $bottom_menu = $(".bottom_menu");

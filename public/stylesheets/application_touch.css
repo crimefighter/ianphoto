@@ -1,9 +1,20 @@
+html.touch {
+  -webkit-text-size-adjust: none;
+}
+
 .touch .watermark {
   font-size: 72px;
 }
 
-.touch .body {
-  background: #000;
+.touch body {
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .touch .next_link, .touch .prev_link {
@@ -36,7 +47,7 @@
 
 .touch .bottom_menu.super_elevated {
   display: block;
-  height: 30%;
+  padding: 0;
 }
 
 .touch .bottom_menu.super_elevated ul li {
@@ -59,4 +70,7 @@
   background: #fff;
   color: #000;
   border: none;
+}
+
+.touch .touch_frame {
 }
