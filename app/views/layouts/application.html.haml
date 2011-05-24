@@ -9,8 +9,9 @@
       <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     =stylesheet_link_tag "application"
     =stylesheet_link_tag "application_touch", :media => "only screen"
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
     =javascript_include_tag "modernizr"
-    =javascript_include_tag "jquery"
     =javascript_include_tag "jquery_ui"
     =javascript_include_tag "jquery_form"
     =javascript_include_tag "loading_box"
