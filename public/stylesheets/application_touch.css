@@ -7,14 +7,22 @@ html.touch {
 }
 
 .touch body {
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.touch .top_bar {
+  position: absolute;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  line-height: 16px;
+  min-height: 16px;
+  padding: 5px;
+  margin: 0 10px;
+  background: rgba(0,0,0,0.5)
 }
 
 .touch .next_link, .touch .prev_link {
@@ -46,7 +54,6 @@ html.touch {
 }
 
 .touch .bottom_menu.super_elevated {
-  display: block;
   padding: 0;
 }
 
@@ -72,5 +79,7 @@ html.touch {
   border: none;
 }
 
-.touch .touch_frame {
+.touch .curtain,
+.touch .backup_curtain {
+  height: 2000px;
 }

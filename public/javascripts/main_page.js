@@ -1,6 +1,4 @@
 jQuery(function($) {
-  if(Modernizr.touch) return;
-
   var position = photos_collection.start;
   var interval = 5000;
   var $curtain = $(".curtain");

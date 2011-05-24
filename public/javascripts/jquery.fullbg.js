@@ -16,7 +16,7 @@
     var img_ratio = img.width/img.height;
     var win = {
       width: $(window).width(),
-      height: $(window).height()
+      height: Math.max($(window).height(), $("body").height())
     }
     var ratio = {
       width: (win.width / img.width),
