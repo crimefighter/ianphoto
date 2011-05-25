@@ -29,12 +29,12 @@
     if((diff.height > win.height) && img_ratio > 1) {
       bgImg.css({
         width: win.width + 'px',
-        height: ''
+        height: 'auto'
       });
     } else {
       bgImg.css({
         height: win.height + 'px',
-        width: ''
+        width: 'auto'
       });		
     }
     var alignment = bgImg.attr("data-alignment");
