@@ -6,12 +6,10 @@
   =javascript_include_tag "menu_elevator"
   :javascript
     var photos_collection = #{@json_collection};
--content_for :title do
-  =@photo.name
 
 =image_tag "loading.gif", :class => "fullBg current loading"
 
-=link_to "ianstudio", root_path, :class => :watermark
+=link_to "ian image", root_path, :class => :watermark
 .next_link
   =link_to "&rarr;".html_safe, "#", :id => "next_link", :class => "paginate"
   =image_tag("", :id => "next_thumbnail", :class => "thumbnail")
