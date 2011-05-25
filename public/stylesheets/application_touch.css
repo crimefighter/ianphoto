@@ -13,7 +13,8 @@ html.touch {
   padding: 0;
 }
 
-.touch .top_bar {
+.touch .top_bar,
+.touch .watermark {
   position: absolute;
   width: auto;
   height: auto;
@@ -22,14 +23,16 @@ html.touch {
   min-height: 16px;
   padding: 5px;
   margin: 0 10px;
+  color: #fff;
   background: rgba(0,0,0,0.5)
 }
 
 .touch .next_link, .touch .prev_link {
   background: transparent;
-  height: 100%;
-  width: 30%;
+  height: 2000px;
+  width: 20%;
   padding: 0;
+  position: fixed;
 }
 
 
@@ -53,20 +56,6 @@ html.touch {
   display: none;
 }
 
-.touch .bottom_menu.super_elevated {
-  padding: 0;
-}
-
-.touch .bottom_menu.super_elevated ul li {
-  font-size: 42px;
-  line-height: 42px;
-  margin: 20px 20px;
-}
-
-.touch .bottom_menu.super_elevated ul.categories_menu li {
-  font-size: 56px;
-}
-
 .touch .static_page {
   width: 80%;
   font-size: 42px;
@@ -82,4 +71,44 @@ html.touch {
 .touch .curtain,
 .touch .backup_curtain {
   height: 2000px;
+}
+
+.touch .forced img.title,
+.touch .forced img.current {
+  width: 100% !important;
+  height: auto !important;
+  position: relative !important;
+  top: auto !important;
+}
+
+.touch .forced .bottom_menu {
+  display: block;
+  position: relative !important;
+}
+
+.touch .forced .bottom_menu ul li {
+  font-size: 28px !important;
+  line-height: 20px !important;
+  clear: both;
+  width: 100%;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+.touch .forced .bottom_menu ul li a {
+  display: block;
+  padding: 10px;
+}
+
+.touch .touch_enforcer {
+  position: fixed;
+  left: 20%;
+  width: 60%;
+  height: 2000px;
+  background: transparent;
+  z-index: 101;
+}
+
+.touch .forced .touch_enforcer, .touch .forced .next_link, .touch .forced .prev_link {
+  display: none;
 }

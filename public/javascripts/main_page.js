@@ -18,6 +18,9 @@ jQuery(function($) {
   }
 
   function rotate() {
+    if($("body").hasClass("forced")) {
+      return initRotation();
+    }
     $curtain.fadeIn("slow", function() {
       $.preloadImage(photos_collection, position, function() {
         $(title_photo).replaceWith($(this).addClass("title fullBg"));
