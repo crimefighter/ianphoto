@@ -17,5 +17,5 @@ jQuery(function($) {
   $(window).resize(function() {
     adjustBody();
   });
-  adjustBody();
+  $(window).resize();
 });

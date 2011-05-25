@@ -68,7 +68,6 @@ jQuery(function($) {
     if(window.history.pushState) {
       window.history.pushState({position: position}, data.current_photo.name, data.current_photo.path);
     }
-    document.title = data.current_photo.name;
     $(".paginate").removeClass("waiting");
 
     if(data.current_photo.description.length) {
