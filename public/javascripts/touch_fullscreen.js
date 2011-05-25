@@ -11,7 +11,7 @@ jQuery(function($) {
       window.scrollTo(0,1);
       var desired_height = window.innerHeight;
       $("body").css("height", desired_height);
-    }, 100);
+    }, 500);
   }
 
   $(window).resize(function() {
