@@ -57,12 +57,13 @@ html.touch {
 }
 
 .touch .static_page {
-  width: 80%;
-  font-size: 42px;
+  width: 100%;
+  font-size: 14px;
+  height: auto;
 }
 
 .touch .static_page p {
-  font-size: 36px;
+  font-size: 12px;
   background: #fff;
   color: #000;
   border: none;
@@ -111,4 +112,8 @@ html.touch {
 
 .touch .forced .touch_enforcer, .touch .forced .next_link, .touch .forced .prev_link {
   display: none;
+}
+
+.touch .description_trigger, .touch .description_container {
+  display: none !important;
 }

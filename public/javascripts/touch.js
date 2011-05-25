@@ -5,6 +5,7 @@ jQuery(function($) {
     if(!$("body").hasClass("forced")) {
       $("body").addClass("forced");
       $(".bottom_menu").addClass("super_elevated");
+      $(".curtain").hide();
       $(window).resize();
       return false;
     }
