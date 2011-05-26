@@ -5,10 +5,8 @@
   =javascript_include_tag "main_page"
   :javascript
     var photos_collection = #{@json_collection};
--content_for :title do
-  ianstudio
 
-.top_bar ianstudio
+.top_bar ian image
 =image_tag "loading.gif", :class => "fullBg title loading"
 =render "main/main_page_menu"
 .curtain

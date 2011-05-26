@@ -20,6 +20,10 @@ class Photo < ActiveRecord::Base
     id
   end
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
   def self.to_json_collection(options = nil, &block)
     options ||= {}
     current_id = options.fetch(:current, 0).to_i

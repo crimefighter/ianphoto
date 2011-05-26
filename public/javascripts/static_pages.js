@@ -14,10 +14,7 @@ $(document).ready(function() {
         stopLoading();
       });
     }
-    if($static_page_container.hasClass("solid")) {
-      window.history.pushState({}, desired_name, desired_href);
-      document.title = desired_name;
-    }
+    window.scrollTo(0,1);
     $static_page_container.removeClass("obscure", "fast");
     return false;
   });
