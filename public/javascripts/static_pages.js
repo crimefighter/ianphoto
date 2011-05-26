@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("ul.static_pages_menu li a").click(function() {
     $static_page_container = $(".static_page:first");
-    desired_id = "#"+$(this).attr("id");
+    desired_id = "#"+$(this).attr("data-page-id");
     desired_href = $(this).attr("href");
     desired_name = $(this).html();
     $static_page_container.find(".subcontainer").hide();
@@ -10,7 +10,7 @@ $(document).ready(function() {
     } else {
       startLoading();
       $.get(desired_href, {format: "js"}, function(data, textStatus) {
-        $(data).appendTo($static_page_container).show();
+        $static_page_container.append(data);
         stopLoading();
       });
     }
