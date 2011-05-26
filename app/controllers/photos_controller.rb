@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
     @json_collection = Photo.from_category(@photo.category_id).to_json_collection(:current => @photo) do |photo|
       photo[:path] = photo_path(photo[:id])
     end
+    @static_pages = StaticPage.all
   end
 
 end
