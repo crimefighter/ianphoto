@@ -7,5 +7,5 @@
   %ul.static_pages_menu
     -static_pages.each do |static_page|
       %li
-        =link_to static_page, static_page_path(static_page), :id => "static_page_#{static_page.id}"
+        =link_to static_page, static_page_path(static_page), :"data-page-id" => "static_page_#{static_page.id}"
   .cl

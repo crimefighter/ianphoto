@@ -19,6 +19,8 @@
 .curtain
 .backup_curtain
 .static_page.obscure
+  -@static_pages.each do |static_page|
+    =render "static_pages/content", :static_page => static_page
 .description_trigger.hidden info
 .description_container.obscure
   .subcontainer
