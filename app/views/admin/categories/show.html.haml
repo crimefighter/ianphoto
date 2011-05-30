@@ -6,7 +6,11 @@
       }
     });
     $("input.promote_to_front_page").click(function() {
-      $(this).parent().ajaxSubmit();
+      $.post($(this).attr("data-submit-to"), {
+        "photo[promote_to_front_page]": ($(this).is(":checked") ? 1 : 0),
+        "authenticity_token": "#{form_authenticity_token}",
+        "_method": "put"
+      });
     });
   });
 
@@ -49,7 +53,5 @@
         |
         =link_to "delete", admin_photo_path(photo), :method => :delete, :confirm => "Are you sure?"
         %br/
-        %small
-          -form_for [:admin, photo], :url => admin_photo_path(photo, :format => :js) do |f|
-            =f.check_box :promote_to_front_page, :id => "promote_to_front_page_#{photo.id}", :class => "promote_to_front_page"
-            =f.label :promote_to_front_page, "front page", :for => "promote_to_front_page_#{photo.id}"
+        =check_box_tag :promote_to_front_page, 1, photo.promote_to_front_page, :id => "promote_to_front_page_#{photo.id}", :class => "promote_to_front_page", :"data-submit-to" => admin_photo_path(photo, :format => :js)
+        =label_tag :promote_to_front_page, "front page", :for => "promote_to_front_page_#{photo.id}"
