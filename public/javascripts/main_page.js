@@ -18,18 +18,18 @@ jQuery(function($) {
   }
 
   function rotate() {
-    if($("body").hasClass("forced")) {
-      return initRotation();
-    }
     $curtain.fadeIn("slow", function() {
       $.preloadImage(photos_collection, position, function() {
         $(title_photo).replaceWith($(this).addClass("title fullBg"));
         $(title_photo).fullBg(function() {
           $curtain.fadeOut("slow");
-          if(photos_collection.items.length > 1) {
-            position = step();
-            initRotation();
-            $.preloadImage(photos_collection, position);
+          if(Modernizr.touch) $("body").addClass("forced");
+          else {
+            if(photos_collection.items.length > 1) {
+              position = step();
+              initRotation();
+              $.preloadImage(photos_collection, position);
+            }
           }
         });
       });

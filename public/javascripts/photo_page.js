@@ -55,13 +55,16 @@ jQuery(function($) {
     };
     $next_link.attr("href", data.next_photo.path);
     $prev_link.attr("href", data.previous_photo.path);
-    switch(direction) {
-      case "forward":
-        $next_thumbnail.baked(summonThumbnail)
-        break;
-      case "backward":
-        $prev_thumbnail.baked(summonThumbnail);
-        break;
+    if($(".thumbnail:visible").size()) {
+      $(".thumbnail").hide();
+      switch(direction) {
+        case "forward":
+          $next_thumbnail.baked(summonThumbnail);
+          break;
+        case "backward":
+          $prev_thumbnail.baked(summonThumbnail);
+          break;
+      }
     }
     $next_thumbnail.attr("src", data.next_photo.small_picture);
     $prev_thumbnail.attr("src", data.previous_photo.small_picture);
@@ -92,7 +95,7 @@ jQuery(function($) {
     $prev_link.bind("mouseenter", function() {
       $("#prev_thumbnail").fadeIn();
     });
-    $(".current:first").live("mousemove", function() {
+    $(".current:first, .curtain, .backup_curtain").live("mousemove", function() {
       $(".thumbnail").hide();
     });
   }
@@ -114,7 +117,6 @@ jQuery(function($) {
     var $this = $(this);
     if($this.hasClass("waiting")) { return false }
     $(".paginate").addClass("waiting");
-    $(".thumbnail").hide();
     position = cycle(position, photos_collection.items);
     rotateTo(position, function() {
       afterRotation("forward");
@@ -126,12 +128,15 @@ jQuery(function($) {
     var $this = $(this);
     if($this.hasClass("waiting")) { return false }
     $(".paginate").addClass("waiting");
-    $(".thumbnail").hide();
     position = cycleBack(position, photos_collection.items);
     rotateTo(position, function() {
       afterRotation("backward");
     });
     return false;
+  });
+
+  $(".current, .curtain, .backup_curtain").live("click", function() {
+    $next_link.click();
   });
 
 });

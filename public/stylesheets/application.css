@@ -155,6 +155,10 @@ img {
   background: #000;
 }
 
+img.current {
+  cursor: pointer;
+}
+
 img.current, img.title {
   z-index: 6;
 }

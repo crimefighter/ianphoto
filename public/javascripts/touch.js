@@ -1,6 +1,8 @@
 jQuery(function($) {
   if(!Modernizr.touch) return;
 
+  $("body").addClass("forced");
+
   $(".touch body:not(.forced), .touch_enforcer").click(function() {
     if(!$("body").hasClass("forced")) {
       $("body").addClass("forced");
@@ -11,7 +13,7 @@ jQuery(function($) {
     }
   });
 
-  $(".touch .forced .current, .touch .forced .title").live("click", function(e) {
+  $(".touch .forced .current").live("click", function(e) {
     if($("body").hasClass("forced")) {
       $("body").removeClass("forced");
       $(".bottom_menu").removeClass("super_elevated");

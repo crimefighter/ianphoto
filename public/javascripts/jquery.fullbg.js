@@ -6,7 +6,7 @@
 **/
 
 (function($) {
-
+  
   $.fn.fitToWindow = function(callback) {
     bgImg = $(this);
     var img = {
