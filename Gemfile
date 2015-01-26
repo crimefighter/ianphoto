@@ -6,8 +6,8 @@ gem 'haml'
 gem 'paperclip'
 gem 'RedCloth'
 group :production do
-  gem 'pg'
-	gem 'rack-google_analytics', :require => "rack/google_analytics"
+  gem 'mysql'
+  gem 'rack-google_analytics', :require => "rack/google_analytics"
 end
 group :development do
   gem 'sqlite3'
