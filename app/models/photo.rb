@@ -10,8 +10,8 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png', 'image/gif']
   validate :only_three_types_of_alignment_shall_stand
 
-  named_scope :shuffled, :order => "random()"
-  named_scope :for_front_page, lambda {|photos| {:conditions => {:promote_to_front_page => true}}}
+  named_scope :shuffled, :order => "rand()"
+  named_scope :for_front_page, {:conditions => {:promote_to_front_page => true}}
   named_scope :from_category, lambda {|category| {:conditions => {:category_id => category.to_i}}}
 
   default_scope :order => "photos.position ASC"
