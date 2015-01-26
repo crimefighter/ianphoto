@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
+gem 'rake', '0.9.2'
 gem 'jquery-rails', '>=1.0.3'
 gem 'haml'
 gem 'paperclip'
