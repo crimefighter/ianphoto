@@ -4,7 +4,7 @@
 %h2 Cropping image
 %p Drag and drop and then click Crop. Mind that real picture is 4 times bigger.
 =image_tag @photo.picture(:original), :class => :croppable
--form_for [:admin, @photo] do |f|
+=form_for [:admin, @photo] do |f|
   -%w(x y w h x2 y2).each do |attr|
     =f.hidden_field "crop_#{attr}", :id => "crop_#{attr}"
   =f.hidden_field :crop_needed, :id => "crop_needed"

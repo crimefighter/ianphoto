@@ -13,7 +13,7 @@
 -else
   %h2 Manage static pages
   =link_to "Add static page", new_admin_static_page_path
-  -form_tag arrange_admin_static_pages_path, :id => "arrange_static_pages_form", :method => :put do
+  =form_tag arrange_admin_static_pages_path, :id => "arrange_static_pages_form", :method => :put do
     %ul.static_pages
       -@static_pages.each do |static_page|
         %li.m-10
@@ -24,4 +24,3 @@
           |
           =link_to "Remove", admin_static_page_path(static_page), :method => :delete, :confirm => "Are you sure?"
           )
-

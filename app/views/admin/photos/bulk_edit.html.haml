@@ -6,7 +6,7 @@
   %h3 Category will be destroyed then
 
 -if @other_categories.present?
-  -form_tag bulk_update_admin_photos_path, :method => :put do
+  =form_tag bulk_update_admin_photos_path, :method => :put do
     =hidden_field_tag :category_id, @category.id
     =label_tag :move_to_category_id, "Move to category:"
     =collection_select :move_to, :category_id, @other_categories, :id, :name
@@ -20,7 +20,7 @@
 %p
   %strong OR
 
--form_tag bulk_update_admin_photos_path, :method => :put do
+=form_tag bulk_update_admin_photos_path, :method => :put do
   =hidden_field_tag :category_id, @category.id
   =hidden_field_tag :destroy_all, true
   =label_tag "Delete all photos (forever!)"
